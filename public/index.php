@@ -7,9 +7,6 @@ use App\Core\Request;
 use App\Core\Router;
 
 
-
-
-
     require_once __DIR__ . '/../src/bootstrap.php';
 
     session_start();

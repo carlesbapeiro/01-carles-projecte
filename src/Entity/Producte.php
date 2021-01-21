@@ -1,7 +1,9 @@
 <?php
 
+namespace App\Entity;
+use App\Core\Entity;
 
-class Producte
+class Producte implements Entity
 {
 
     private ?int $id = null;
@@ -93,6 +95,8 @@ class Producte
     }
 
 
-
-
+    public function toArray(): array
+    {
+        // TODO: Implement toArray() method.
+    }
 }

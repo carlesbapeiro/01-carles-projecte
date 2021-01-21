@@ -1,7 +1,9 @@
 <?php
 
-
+namespace App\Model;
 use App\Core\Model;
+use App\Entity\Producte;
+use PDO;
 
 class producteModel extends Model
 {
