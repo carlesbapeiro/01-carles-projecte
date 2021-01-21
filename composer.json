@@ -1,0 +1,15 @@
+{
+  "name": "vendor_name/projectephp",
+  "description": "description",
+  "minimum-stability": "stable",
+  "license": "proprietary",
+  "authors": [
+    {
+      "name": "carles",
+      "email": "email@example.com"
+    }
+  ],
+  "require": {
+
+  }
+}

@@ -1,0 +1,325 @@
+/*Presentacio*/
+
+.presentacio{
+
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    
+}
+
+.subtitol-presentacio{
+
+
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+    background-color: white;
+    width: 50%;
+    border-radius: 5px;
+    padding: 15px;
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+.paragraf-presentacio{
+    
+    margin-bottom: 20px;
+}
+
+.foto-presentacio2{
+
+    width:70%;
+    border-radius: 5px;
+
+}
+
+
+/* ESTILS PER A ELS PRODUCTES CARROUSEL */
+
+
+a{
+	text-decoration:none;
+}
+
+ul{
+    margin-left: -40px;
+}
+.caixa{
+
+    width:250px;
+    
+    /*Per a donarli produnditat a la info adicional*/
+	box-shadow: 2px 2px 30px rgba(0,0,0,0.2);
+    margin: 30px;
+    border-radius: 10px;
+}
+.caixa-img{
+
+	height: 200px;
+	position:relative;
+}
+.caixa-img img{
+
+    border-radius: 10px;
+	width:100%;
+	height: 100%;
+	object-fit: cover;
+	box-sizing: border-box;
+}
+
+.info{
+	width: 100%;
+    display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 10px 20px;
+	box-sizing: border-box;
+
+}
+.tipo{
+	display: flex;
+	flex-direction: column;
+}
+.tipo a{
+	color:#222222;
+	margin: 5px 0px;
+	font-weight: 700;
+	letter-spacing: 0.5px;
+	padding-right: 8px;
+}
+.tipo span{
+	color:rgba(26,26,26,0.5);
+}
+.preu{
+	color: #333333;
+	font-weight: 600;
+	font-size: 1.1rem;
+
+	letter-spacing: 0.5px;
+}
+.overlay{
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%,-50%);
+	width:100%;
+	height: 100%;
+	background-color: rgba(226, 197, 88, 0.6);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.comprar{
+	width:160px;
+	height: 40px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: #FFFFFF;
+	color:#252525;
+	font-weight: 700;
+	letter-spacing: 1px;
+
+	border-radius: 20px;
+	box-shadow: 2px 2px 30px rgba(0,0,0,0.2);
+}
+.comprar:hover{
+	color:#FFFFFF;
+	background-color: rgb(248, 171, 55);
+	transition: all ease 0.3s;
+}
+.overlay{
+	visibility: hidden;
+}
+
+.caixa-img:hover .overlay{
+	visibility: visible;
+	animation:fade 0.5s;
+}
+ 
+@keyframes fade{
+	0%{
+		opacity: 0;
+	}
+	100%{
+		opacity: 1;
+	}
+}
+
+.productes ul li{
+    
+    display: inline-block;
+    list-style-type: none;
+
+    
+}
+
+
+/*---Rating--- */
+.rating {
+    font-size: 20px;
+    unicode-bidi: bidi-override;
+    direction: rtl;
+  }
+  .rating > span {
+    display: inline-block;
+    position: relative;
+    width: 1.1em;
+  }
+  .rating > span:hover:before,
+  .rating > span:hover ~ span:before {
+     content: "\2605";
+     color: rgba(223, 223, 24, 0.747);
+     position: absolute;
+  }
+ 
+
+/* Fi estils per a productes */
+
+
+/*-- Carrousel -- */
+
+
+.carrousel{
+    display: flex;
+
+
+}
+
+#carrusel {
+    display: flex;
+    align-content: center;
+    width:85%;
+    overflow:hidden;
+    height:350px;
+    position:relative;
+
+}
+ 
+#carrusel .left-arrow {
+    position:absolute;
+
+    z-index:1;
+    top:35%;
+
+}
+ 
+#carrusel .right-arrow {
+    position:absolute;
+    right: 0px;
+    z-index:1;
+    top:35%;
+
+}
+
+.arrow-container{
+    opacity: 0.5;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    height: 80px;
+    width: 30px;
+    background-color: rgb(248, 171, 55);
+
+}
+.arrow-container:hover{
+    opacity: 1;
+}
+ 
+.carrusel {
+
+    width:4000px;
+    position:absolute;
+    z-index:0;
+}
+ 
+.carrusel>div {
+
+    float: left;
+
+}
+#carrusel2 {
+    display: flex;
+    align-content: center;
+    width:85%;
+    overflow:hidden;
+    height:350px;
+    position:relative;
+
+}
+ 
+#carrusel2 .left-arrow2 {
+    position:absolute;
+
+    z-index:1;
+    top:35%;
+
+}
+ 
+#carrusel2 .right-arrow2 {
+    position:absolute;
+    right: 0px;
+    z-index:1;
+    top:35%;
+
+}
+ 
+.carrusel2 {
+
+    width:4000px;
+    position:absolute;
+    z-index:0;
+}
+ 
+.carrusel2>div {
+
+    float: left;
+
+}
+/*Nota: se que els estils del carrousel no estan optimitzats
+es degut al java script, no he tingut temps de millorar-lo i per 
+com esta fet tenia que creat dos carrousels amb noms dinstints i
+estils distints.*/
+
+
+/*---FI CARROUSEL ---*/
+
+
+/* Zona Unete*/
+.text-content-container{
+
+    border-radius: 20px;
+    box-shadow: 2px 2px 30px rgba(0,0,0,0.2);
+    line-height: 200%;
+
+}
+.text-content{
+
+    padding: 10px ;
+}
+.unete-img{
+
+
+    border-radius: 10px;
+
+    border: 1px solid;
+
+    width: 100%;
+    height: 100%;
+}
+
+.registrar-container{
+    margin-top: 40px;
+    display: flex;
+    margin-bottom: 40px;
+    
+}
+.registrar-container:hover{
+    opacity: 75%;
+}
+
+.registrar-enllas{
+    border-radius: 5px;
+    text-decoration: none;
+    color: black;
+    padding:15px;
+    background-color: rgb(248, 171, 55);
+}

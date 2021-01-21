@@ -1,0 +1,14 @@
+
+Hope you enjoy your new logo, here are the people that
+made your beautiful logo happen :)
+font name: Brawler
+font link: https://fonts.google.com/specimen/Brawler
+font author: Cyreal
+font author site: http://www.cyreal.org/
+
+
+icon designer: Alfredo @ IconsAlfredo.com
+icon designer link: /AlfredoCreates
+        
+{"bg":"#559F41","icon":"#F1CC07","font":"#FFFFFF","slogan":"#ffffff"}
+      

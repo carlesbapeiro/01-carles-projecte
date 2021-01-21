@@ -1,0 +1,208 @@
+*{
+    
+    margin: 0 auto;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    /* per al carrousel */
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+a{
+	text-decoration:none;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+/*---HEADER---*/
+.separador{
+    position: relative;
+    height: 40px;
+    width: 100%;
+}
+
+.logo{
+    
+    max-width: 75%;
+    max-height: 70%;
+}
+.logo2{
+
+    display: flex;
+    width: 30%;
+    height: 30%;
+}
+.menu{
+    position: fixed;
+    background-color: black;
+    z-index: 1000;
+    
+}
+.logoCont{
+    
+    display: flex;
+    align-items: center;
+    
+}
+#header-col{
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    
+}
+#header-col a{
+
+    border-radius: 10px;
+    padding: 10px;
+    padding-left: 30px;
+    padding-right: 30px;
+    border: 1px solid transparent;
+    text-decoration: none;
+    color: white
+}
+
+#header-col a:hover{
+    
+    color: rgb(248, 171, 55);;
+    border: 1px solid rgb(248, 171, 55);;
+}
+
+/*FI HEADER*/
+
+/*---FOOTER---*/
+.footer{
+    bottom: 0px;
+    text-align: center;
+    justify-content: space-around;
+    background-color: black;
+    color: white;
+}
+.logo-footer{
+    
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: 30px;
+    width: 50px;
+    height: 50px;;
+}
+.boto-footer{
+    
+    display:flex;
+    justify-content: center;
+    width: 50%;
+    background-color: rgb(248, 171, 55);;
+    color: black;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    padding: 10px;
+}
+.boto-footer:hover{
+    background-color: white;
+}
+.titol-footer{
+    margin-bottom: 30px;
+}
+/*---FI FOOTER---*/
+
+.enfasis{
+    border-radius: 5px;
+background-color: rgb(255, 207, 136);
+}
+
+
+
+/* BARRA NAVEGACIO*/
+
+.barra-navegacio{
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    display: flex;
+    overflow: hidden;
+    
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .enllas-navegacio{
+    border-radius: 5px;
+    display: block;
+    color: black;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+  .enllas-navegacio:hover {
+    background-color:rgb(248, 171, 55);
+  }
+
+  
+/*Banners*/
+
+.titol-banner{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    font-size: 30px;
+    /*background-image: linear-gradient( 153deg, #fb8332 0%,  rgb(255, 207, 136) 95%);*/
+    font-weight: 500;
+    height: 120px;
+    padding:20px;
+    background-color: rgb(248, 171, 55);
+    border-radius: 5px;
+
+    box-shadow: 2px 2px 10px 1px rgba(0, 0, 0, 0.2);
+}
+
+
+/*MENU HAMBURGUESA*/
+
+.mobile-container {
+    display: none;
+    max-width: 480px;
+    height: 15%;
+    box-shadow: 2px 2px 10px 1px rgba(0, 0, 0, 0.2);
+    color: white;
+    border-radius: 5px;
+  }
+  .img-menu-hamb{
+      
+      display: flex;
+      width: 10%;
+  }
+
+  .topnav {
+
+    text-align: center;
+    padding-top: 15%;
+    display: block;
+    background-color:  rgb(248, 171, 55);
+    position: relative;
+  }
+  
+  .topnav #myLinks {
+    display: none;
+  }
+  
+  .topnav a {
+    color: white;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+    display: block;
+  }
+
+  .topnav a.icon {
+    border: 1px solid black;
+    background: white;
+    display: block;
+    color: black;
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  
+
+
