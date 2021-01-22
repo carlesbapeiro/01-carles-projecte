@@ -102,7 +102,7 @@ class Producte implements Entity
             "nom"=>$this->getNom(),
             "descripcio"=>$this->getDescripcio(),
             "preu" =>$this->getPreu(),
-            "valoracio" => 5
+            "valoracio" => 0
         ];
     }
 }

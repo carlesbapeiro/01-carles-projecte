@@ -11,7 +11,7 @@
         </div>
         <div class="col-1" id="header-col">
 
-            <a href="Home.html">Inici</a>
+            <a href="/">Inici</a>
 
         </div>
         <div class="col-1" id="header-col">
