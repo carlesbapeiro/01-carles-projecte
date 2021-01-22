@@ -97,6 +97,12 @@ class Producte implements Entity
 
     public function toArray(): array
     {
-        // TODO: Implement toArray() method.
+        return [
+            "id"=>$this->getId(),
+            "nom"=>$this->getNom(),
+            "descripcio"=>$this->getDescripcio(),
+            "preu" =>$this->getPreu(),
+            "valoracio" => 5
+        ];
     }
 }

@@ -50,11 +50,11 @@ class ProducteController extends Controller
         $title = "Nou Producte";
 
         $nom = filter_input(INPUT_POST, "nom");
-        if (empty($name)) {
+        if (empty($nom)) {
             $errors[] = "No pots deixar el nom buit";
         }
         $descripcio = filter_input(INPUT_POST, "descripcio");
-        if (empty($preu)) {
+        if (empty($descripcio)) {
             $errors[] = "No pots deixar la descripcio buida";
         }
         $preu = filter_input(INPUT_POST, "preu");

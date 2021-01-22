@@ -2,32 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e2882fb9-50f7-419a-8a93-29abca5336c9" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/public/css/estils-grid.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Controllers/ProducteController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/views/productes-create.view.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/views/productes-store.view.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/views/productes.view.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/views/productes/form-create-view.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/routes.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/routes.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/estilsHome.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/estilsHome.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controllers/DefaultController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/DefaultController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controllers/MovieController.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controllers/PartnerController.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/composer/InstalledVersions.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/InstalledVersions.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_psr4.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_psr4.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_real.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_real.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_static.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_static.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/composer/installed.json" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/installed.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/composer/installed.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/installed.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/_layouts/default.layout.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/_layouts/default.layout.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/_partials/footer.partial.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/_partials/footer.partial.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/_partials/head.partial.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/_partials/head.partial.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/_partials/header.partial.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/_partials/header.partial.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/index.view.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/index.view.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controllers/ProducteController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/ProducteController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Producte.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Producte.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/productes-store.view.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/productes-store.view.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/productes/form-create-view.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/productes/form-create.view.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -89,7 +68,16 @@
       <workItem from="1611303326679" duration="3900000" />
       <workItem from="1611313250498" duration="1524000" />
       <workItem from="1611315143350" duration="2781000" />
+      <workItem from="1611318754931" duration="751000" />
     </task>
+    <task id="LOCAL-00001" summary="nuevas">
+      <created>1611318771238</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1611318771238</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -106,5 +94,9 @@
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="nuevas" />
+    <option name="LAST_COMMIT_MESSAGE" value="nuevas" />
   </component>
 </project>
