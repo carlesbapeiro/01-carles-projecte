@@ -10,7 +10,7 @@
 
             </div>
             <div class="col-4 footer">
-                <h2>CONTACTA AMB NOSALTRES</h2>
+                <h4>CONTACTA AMB NOSALTRES</h4>
 
                 <img class="logo-footer" src="/images/imgHome/img/facebook.png" alt="facebook">
                 <img class="logo-footer" src="/images/imgHome/img/gorjeo.png" alt="twitter">
@@ -21,14 +21,14 @@
 
             </div>
             <div class="col-4 footer">
-                <h2 class="titol-footer">NECESSITES AJUDA?</h2>
+                <h4 class="titol-footer">NECESSITES AJUDA?</h4>
 
                 <a class="boto-footer" href="FormContacte.html">PREGUNTA SENSE POR!</a>
 
             </div>
 
             <div class="col-4 footer">
-                <h2 class="titol-footer">POLITICA DE PRIVACITAT</h2>
+                <h4 class="titol-footer">POLITICA DE PRIVACITAT</h4>
 
                 <a class="boto-footer" href="PoliticaPrivacitat.html">CONSULTAR</a>
 

@@ -6,11 +6,11 @@
 
     require __DIR__ . '/../_partials/head.partial.php' ?>
 </head>
-<body class="d-flex flex-column min-vh-100">
+<body class="">
 <header>
     <?php require __DIR__ . '/../_partials/header.partial.php' ?>
 </header>
-<main class="mt-2 flex-fill">
+<main class="">
 <?=$content?>
 </main>
 <?php require __DIR__ . '/../_partials/footer.partial.php' ?>

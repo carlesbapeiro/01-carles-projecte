@@ -5,6 +5,13 @@ $router->get("", "DefaultController", "index");
 $router->get("contact", "DefaultController", "contact");
 $router->get("api/demo", "DefaultController", "demo");
 
+/* Productes route*/
+
+$router->get("productes", "ProducteController", "index");
+
+$router->get("productes/create", "ProducteController", "create");
+$router->post("productes/create", "ProducteController", "store");
+
 
 /* Movies routes */
 

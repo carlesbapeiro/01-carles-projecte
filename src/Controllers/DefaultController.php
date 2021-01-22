@@ -8,6 +8,7 @@ use App\Core\Router;
 use App\Model\GenreModel;
 use App\Model\MovieModel;
 use App\Model\PartnerModel;
+use App\Model\producteModel;
 use Exception;
 use PDOException;
 use App\Entity\Movie;
@@ -16,15 +17,9 @@ class DefaultController extends Controller
 {
     public function index(): string {
         try {
-            $movieModel = App::getModel(MovieModel::class);
-            $movies = $movieModel->findAllPaginated(1, 8,
-                ["release_date"=>"DESC", "title"=>"ASC"]);
+            $producteModel = App::getModel(producteModel::class);
+            $productes = $producteModel->findAll(["nom"=>"ASC"]);
 
-            $partnerModel = App::getModel(PartnerModel::class);
-            $partners = $partnerModel->findAll();
-
-            $genreModel = App::getModel(GenreModel::class);
-            $genres = $genreModel->findAll(["name"=>"ASC"]);
 
 
         } catch (PDOException $PDOException) {
@@ -34,16 +29,11 @@ class DefaultController extends Controller
         }
 
 
-        shuffle($partners);
-        $partners = array_slice($partners, 0, 4);
-        $title = "Movie FX";
+        $title = "Agrow";
 
         $router = App::get(Router::class);
 
-        $partnersPath = App::get("config")["partners_path"];
-
-        return $this->response->renderView("index", "default", compact('title', 'partners',
-            'movies', 'genres', 'router', 'partnersPath'));
+        return $this->response->renderView("index", "default", compact('title', 'productes', 'router'));
     }
 
     public function contact() {
@@ -92,6 +82,7 @@ class DefaultController extends Controller
     }
 
     public function demo(): string {
+
         $movieModel = App::getModel(MovieModel::class);
         $movies = $movieModel->findAllPaginated(1, 8,
             ["release_date"=>"DESC", "title"=>"ASC"]);
