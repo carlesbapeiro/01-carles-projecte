@@ -12,8 +12,7 @@ return [
         ]
     ,
     "logfile" => "my_app.log",
-    "partners_path" => "images/partners/",
-    "posters_path" => "images/posters/",
+    "productes_path" => "images/productes/",
 
     "security" => ["roles" =>
         [

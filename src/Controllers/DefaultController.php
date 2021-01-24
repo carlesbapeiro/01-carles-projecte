@@ -16,10 +16,10 @@ use App\Entity\Movie;
 class DefaultController extends Controller
 {
     public function index(): string {
+
         try {
             $producteModel = App::getModel(producteModel::class);
             $productes = $producteModel->findAll(["nom"=>"ASC"]);
-
 
 
         } catch (PDOException $PDOException) {

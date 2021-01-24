@@ -6,13 +6,13 @@ ini_set( 'session.cookie_httponly', "1" );
 
 require_once __DIR__ . '/../vendor/autoload.php';
 
-
 use App\Core\App;
 use App\Core\Exception\NotFoundException;
 use App\Core\Response;
 use App\Core\Security;
 use App\Database;
-
+use App\Model\UserModel;
+use App\Utils\MyLogger;
 
 
 if (!isset($_SESSION['CREATED'])) {
@@ -33,16 +33,26 @@ App::bind("security", $security);
 
 
 
-
-
-$security = new Security();
-App::bind("security", $security);
-
 App::bind("flash", $flash );
 App::bind("router", $redirect);
 App::bind("DB", Database::getConnection());
 App::bind(Response::class, new Response());
 
+
+
+$loggedUser = $_SESSION["loggedUser"] ?? 0;
+
+$id = filter_var($loggedUser, FILTER_VALIDATE_INT);
+if (!empty($id)) {
+    try {
+        App::bind('user', App::getModel(UserModel::class)->find($id));
+    }
+    catch (NotFoundException $notFoundException) {
+        App::bind('user',null);
+    }
+}
+else
+    App::bind('user', null);
 
 
 

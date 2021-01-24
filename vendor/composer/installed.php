@@ -6,7 +6,7 @@
     'aliases' => 
     array (
     ),
-    'reference' => 'bcba36226373ee34a03b71124880f0f4ab985873',
+    'reference' => '9e6bfd92b589e282f6ae7d16f58c3e1117daaa8f',
     'name' => 'vendor_name/projectephp',
   ),
   'versions' => 
@@ -43,7 +43,7 @@
       'aliases' => 
       array (
       ),
-      'reference' => 'bcba36226373ee34a03b71124880f0f4ab985873',
+      'reference' => '9e6bfd92b589e282f6ae7d16f58c3e1117daaa8f',
     ),
   ),
 );

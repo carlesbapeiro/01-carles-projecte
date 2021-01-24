@@ -1,10 +1,193 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="e2882fb9-50f7-419a-8a93-29abca5336c9" name="Default Changelist" comment="nuevas cosas">
+    <list default="true" id="e2882fb9-50f7-419a-8a93-29abca5336c9" name="Default Changelist" comment="Retoques">
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_22_01_2021_17_24_[Default_Changelist]/shelved.patch" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_22_01_2021_17_24__Default_Changelist_.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Entity/User.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Model/UserModel.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/composer/autoload_files.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/composer/platform_check.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/monolog/monolog/CHANGELOG.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/monolog/monolog/LICENSE" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/monolog/monolog/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/monolog/monolog/UPGRADE.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/monolog/monolog/composer.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/monolog/monolog/phpstan.neon.dist" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/monolog/monolog/src/Monolog/DateTimeImmutable.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/monolog/monolog/src/Monolog/ErrorHandler.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/monolog/monolog/src/Monolog/Formatter/ChromePHPFormatter.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/monolog/monolog/src/Monolog/Formatter/ElasticaFormatter.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/monolog/monolog/src/Monolog/Formatter/ElasticsearchFormatter.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/monolog/monolog/src/Monolog/Formatter/FlowdockFormatter.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/monolog/monolog/src/Monolog/Formatter/FluentdFormatter.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/monolog/monolog/src/Monolog/Formatter/FormatterInterface.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/monolog/monolog/src/Monolog/Formatter/GelfMessageFormatter.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/monolog/monolog/src/Monolog/Formatter/HtmlFormatter.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/monolog/monolog/src/Monolog/Formatter/JsonFormatter.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/monolog/monolog/src/Monolog/Formatter/LineFormatter.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/monolog/monolog/src/Monolog/Formatter/LogglyFormatter.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/monolog/monolog/src/Monolog/Formatter/LogmaticFormatter.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/monolog/monolog/src/Monolog/Formatter/LogstashFormatter.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/monolog/monolog/src/Monolog/Formatter/MongoDBFormatter.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/monolog/monolog/src/Monolog/Formatter/NormalizerFormatter.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/monolog/monolog/src/Monolog/Formatter/ScalarFormatter.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/monolog/monolog/src/Monolog/Formatter/WildfireFormatter.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/monolog/monolog/src/Monolog/Handler/AbstractHandler.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/monolog/monolog/src/Monolog/Handler/AbstractProcessingHandler.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/monolog/monolog/src/Monolog/Handler/AbstractSyslogHandler.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/monolog/monolog/src/Monolog/Handler/AmqpHandler.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/monolog/monolog/src/Monolog/Handler/BrowserConsoleHandler.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/monolog/monolog/src/Monolog/Handler/BufferHandler.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/monolog/monolog/src/Monolog/Handler/ChromePHPHandler.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/monolog/monolog/src/Monolog/Handler/CouchDBHandler.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/monolog/monolog/src/Monolog/Handler/CubeHandler.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/monolog/monolog/src/Monolog/Handler/Curl/Util.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/monolog/monolog/src/Monolog/Handler/DeduplicationHandler.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/monolog/monolog/src/Monolog/Handler/DoctrineCouchDBHandler.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/monolog/monolog/src/Monolog/Handler/DynamoDbHandler.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/monolog/monolog/src/Monolog/Handler/ElasticaHandler.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/monolog/monolog/src/Monolog/Handler/ElasticsearchHandler.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/monolog/monolog/src/Monolog/Handler/ErrorLogHandler.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/monolog/monolog/src/Monolog/Handler/FallbackGroupHandler.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/monolog/monolog/src/Monolog/Handler/FilterHandler.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/monolog/monolog/src/Monolog/Handler/FingersCrossed/ActivationStrategyInterface.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/monolog/monolog/src/Monolog/Handler/FingersCrossed/ChannelLevelActivationStrategy.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/monolog/monolog/src/Monolog/Handler/FingersCrossed/ErrorLevelActivationStrategy.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/monolog/monolog/src/Monolog/Handler/FingersCrossedHandler.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/monolog/monolog/src/Monolog/Handler/FirePHPHandler.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/monolog/monolog/src/Monolog/Handler/FleepHookHandler.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/monolog/monolog/src/Monolog/Handler/FlowdockHandler.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/monolog/monolog/src/Monolog/Handler/FormattableHandlerInterface.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/monolog/monolog/src/Monolog/Handler/FormattableHandlerTrait.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/monolog/monolog/src/Monolog/Handler/GelfHandler.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/monolog/monolog/src/Monolog/Handler/GroupHandler.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/monolog/monolog/src/Monolog/Handler/Handler.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/monolog/monolog/src/Monolog/Handler/HandlerInterface.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/monolog/monolog/src/Monolog/Handler/HandlerWrapper.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/monolog/monolog/src/Monolog/Handler/IFTTTHandler.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/monolog/monolog/src/Monolog/Handler/InsightOpsHandler.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/monolog/monolog/src/Monolog/Handler/LogEntriesHandler.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/monolog/monolog/src/Monolog/Handler/LogglyHandler.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/monolog/monolog/src/Monolog/Handler/LogmaticHandler.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/monolog/monolog/src/Monolog/Handler/MailHandler.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/monolog/monolog/src/Monolog/Handler/MandrillHandler.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/monolog/monolog/src/Monolog/Handler/MissingExtensionException.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/monolog/monolog/src/Monolog/Handler/MongoDBHandler.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/monolog/monolog/src/Monolog/Handler/NativeMailerHandler.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/monolog/monolog/src/Monolog/Handler/NewRelicHandler.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/monolog/monolog/src/Monolog/Handler/NoopHandler.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/monolog/monolog/src/Monolog/Handler/NullHandler.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/monolog/monolog/src/Monolog/Handler/OverflowHandler.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/monolog/monolog/src/Monolog/Handler/PHPConsoleHandler.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/monolog/monolog/src/Monolog/Handler/ProcessHandler.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/monolog/monolog/src/Monolog/Handler/ProcessableHandlerInterface.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/monolog/monolog/src/Monolog/Handler/ProcessableHandlerTrait.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/monolog/monolog/src/Monolog/Handler/PsrHandler.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/monolog/monolog/src/Monolog/Handler/PushoverHandler.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/monolog/monolog/src/Monolog/Handler/RedisHandler.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/monolog/monolog/src/Monolog/Handler/RedisPubSubHandler.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/monolog/monolog/src/Monolog/Handler/RollbarHandler.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/monolog/monolog/src/Monolog/Handler/RotatingFileHandler.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/monolog/monolog/src/Monolog/Handler/SamplingHandler.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/monolog/monolog/src/Monolog/Handler/SendGridHandler.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/monolog/monolog/src/Monolog/Handler/Slack/SlackRecord.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/monolog/monolog/src/Monolog/Handler/SlackHandler.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/monolog/monolog/src/Monolog/Handler/SlackWebhookHandler.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/monolog/monolog/src/Monolog/Handler/SocketHandler.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/monolog/monolog/src/Monolog/Handler/SqsHandler.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/monolog/monolog/src/Monolog/Handler/StreamHandler.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/monolog/monolog/src/Monolog/Handler/SwiftMailerHandler.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/monolog/monolog/src/Monolog/Handler/SyslogHandler.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/monolog/monolog/src/Monolog/Handler/SyslogUdp/UdpSocket.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/monolog/monolog/src/Monolog/Handler/SyslogUdpHandler.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/monolog/monolog/src/Monolog/Handler/TelegramBotHandler.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/monolog/monolog/src/Monolog/Handler/TestHandler.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/monolog/monolog/src/Monolog/Handler/WebRequestRecognizerTrait.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/monolog/monolog/src/Monolog/Handler/WhatFailureGroupHandler.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/monolog/monolog/src/Monolog/Handler/ZendMonitorHandler.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/monolog/monolog/src/Monolog/Logger.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/monolog/monolog/src/Monolog/Processor/GitProcessor.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/monolog/monolog/src/Monolog/Processor/HostnameProcessor.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/monolog/monolog/src/Monolog/Processor/IntrospectionProcessor.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/monolog/monolog/src/Monolog/Processor/MemoryPeakUsageProcessor.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/monolog/monolog/src/Monolog/Processor/MemoryProcessor.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/monolog/monolog/src/Monolog/Processor/MemoryUsageProcessor.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/monolog/monolog/src/Monolog/Processor/MercurialProcessor.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/monolog/monolog/src/Monolog/Processor/ProcessIdProcessor.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/monolog/monolog/src/Monolog/Processor/ProcessorInterface.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/monolog/monolog/src/Monolog/Processor/PsrLogMessageProcessor.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/monolog/monolog/src/Monolog/Processor/TagProcessor.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/monolog/monolog/src/Monolog/Processor/UidProcessor.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/monolog/monolog/src/Monolog/Processor/WebProcessor.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/monolog/monolog/src/Monolog/Registry.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/monolog/monolog/src/Monolog/ResettableInterface.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/monolog/monolog/src/Monolog/SignalHandler.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/monolog/monolog/src/Monolog/Test/TestCase.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/monolog/monolog/src/Monolog/Utils.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/psr/log/LICENSE" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/psr/log/Psr/Log/AbstractLogger.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/psr/log/Psr/Log/InvalidArgumentException.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/psr/log/Psr/Log/LogLevel.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/psr/log/Psr/Log/LoggerAwareInterface.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/psr/log/Psr/Log/LoggerAwareTrait.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/psr/log/Psr/Log/LoggerInterface.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/psr/log/Psr/Log/LoggerTrait.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/psr/log/Psr/Log/NullLogger.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/psr/log/Psr/Log/Test/DummyTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/psr/log/Psr/Log/Test/LoggerInterfaceTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/psr/log/Psr/Log/Test/TestLogger.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/psr/log/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/psr/log/composer.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/views/error.view.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/views/movies.view.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/views/productes-delete.view.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/views/productes-destroy.view.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/views/productes-edit.view.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/views/productes/form-delete.view.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/views/productes/form-edit.view.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/views/users-create.view.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/views/users-delete.view.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/views/users-destroy.view.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/views/users-edit.view.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/views/users-store.view.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/views/users-update.view.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/views/users.view.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/config.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/config.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/routes.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/routes.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/estilsGenerals.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/estilsGenerals.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/estilsHome.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/estilsHome.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controllers/DefaultController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/DefaultController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controllers/ProducteController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/ProducteController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Entity/Producte.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Producte.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/bootstrap.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/bootstrap.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/InstalledVersions.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/InstalledVersions.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/installed.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/installed.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/_partials/head.partial.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/_partials/head.partial.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/views/_partials/header.partial.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/_partials/header.partial.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/index.view.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/index.view.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/productes.view.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/productes.view.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/productes/form-create.view.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/productes/form-create.view.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,6 +208,11 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="PhpServers">
+    <servers>
+      <server host="localhost" id="48dd8183-5617-47bb-8be3-18d611671a21" name="localdebug" />
+    </servers>
+  </component>
   <component name="PhpWorkspaceProjectConfiguration" interpreter_name="PHP XAMP">
     <include_path>
       <path value="$PROJECT_DIR$/vendor/composer" />
@@ -40,17 +228,19 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/public/css" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../projecte/01-carles" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="php.override.implement.member.chooser.php.doc" value="NONE" />
-    <property name="settings.editor.selected.configurable" value="reference.webide.settings.project.settings.php" />
+    <property name="settings.editor.selected.configurable" value="reference.webide.settings.project.settings.php.debug" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\Usuario\projectePHP\src\Model" />
+      <recent name="E:\Usuario\projectePHP\src\Entity" />
+      <recent name="E:\Usuario\projectePHP\views" />
       <recent name="$PROJECT_DIR$/public/css" />
       <recent name="E:\Usuario\projectePHP\public\css" />
-      <recent name="E:\Usuario\projectePHP\public\images" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -67,6 +257,9 @@
       <workItem from="1611313250498" duration="1524000" />
       <workItem from="1611315143350" duration="2781000" />
       <workItem from="1611318754931" duration="1045000" />
+      <workItem from="1611416974667" duration="3635000" />
+      <workItem from="1611420756999" duration="640000" />
+      <workItem from="1611503254196" duration="3169000" />
     </task>
     <task id="LOCAL-00001" summary="nuevas">
       <created>1611318771238</created>
@@ -104,5 +297,87 @@
     <MESSAGE value="nuevas" />
     <MESSAGE value="nuevas cosas" />
     <option name="LAST_COMMIT_MESSAGE" value="nuevas cosas" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="436" y="135" key="#Servers" timestamp="1611420838979">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="436" y="135" key="#Servers/0.0.1536.824@0.0.1536.824" timestamp="1611420838979" />
+    <state x="223" y="0" width="1089" height="824" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1611421038911">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="223" y="0" width="1089" height="824" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824@0.0.1536.824" timestamp="1611421038911" />
+    <state x="562" y="121" key="#com.intellij.ide.util.MemberChooser" timestamp="1611333413744">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="562" y="121" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1611333413744" />
+    <state x="499" y="167" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1611506676629">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="499" y="167" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1536.824@0.0.1536.824" timestamp="1611506676629" />
+    <state x="549" y="167" key="FileChooserDialogImpl" timestamp="1611503650350">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1611503650350" />
+    <state width="1493" height="255" key="GridCell.Tab.0.bottom" timestamp="1611420614034">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="255" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1611420614034" />
+    <state width="1493" height="255" key="GridCell.Tab.0.center" timestamp="1611420614034">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="255" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1611420614034" />
+    <state width="1493" height="255" key="GridCell.Tab.0.left" timestamp="1611420614034">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="255" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1611420614034" />
+    <state width="1493" height="255" key="GridCell.Tab.0.right" timestamp="1611420614034">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="255" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1611420614034" />
+    <state width="1493" height="255" key="GridCell.Tab.1.bottom" timestamp="1611420614034">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="255" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1611420614034" />
+    <state width="1493" height="255" key="GridCell.Tab.1.center" timestamp="1611420614034">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="255" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1611420614034" />
+    <state width="1493" height="255" key="GridCell.Tab.1.left" timestamp="1611420614034">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="255" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1611420614034" />
+    <state width="1493" height="255" key="GridCell.Tab.1.right" timestamp="1611420614034">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="255" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1611420614034" />
+    <state width="1493" height="255" key="GridCell.Tab.2.bottom" timestamp="1611420614034">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="255" key="GridCell.Tab.2.bottom/0.0.1536.824@0.0.1536.824" timestamp="1611420614034" />
+    <state width="1493" height="255" key="GridCell.Tab.2.center" timestamp="1611420614034">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="255" key="GridCell.Tab.2.center/0.0.1536.824@0.0.1536.824" timestamp="1611420614034" />
+    <state width="1493" height="255" key="GridCell.Tab.2.left" timestamp="1611420614034">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="255" key="GridCell.Tab.2.left/0.0.1536.824@0.0.1536.824" timestamp="1611420614034" />
+    <state width="1493" height="255" key="GridCell.Tab.2.right" timestamp="1611420614034">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="255" key="GridCell.Tab.2.right/0.0.1536.824@0.0.1536.824" timestamp="1611420614034" />
+    <state x="604" y="368" width="328" height="150" key="NewPhpFileDialog" timestamp="1611507078134">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="604" y="368" width="328" height="150" key="NewPhpFileDialog/0.0.1536.824@0.0.1536.824" timestamp="1611507078134" />
+    <state x="277" y="57" key="SettingsEditor" timestamp="1611420857116">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="277" y="57" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1611420857116" />
+    <state x="425" y="187" key="run.anything.popup" timestamp="1611336318190">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="425" y="187" key="run.anything.popup/0.0.1536.824@0.0.1536.824" timestamp="1611336318190" />
   </component>
 </project>

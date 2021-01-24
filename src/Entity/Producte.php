@@ -5,12 +5,30 @@ use App\Core\Entity;
 
 class Producte implements Entity
 {
-
+    const POSTER_PATH = 'images/productes/';
     private ?int $id = null;
     private string $descripcio;
     private int $preu;
     private string $nom;
     private string $valoracio;
+    private string $poster;
+
+    /**
+     * @return string
+     */
+    public function getPoster(): string
+    {
+        return $this->poster;
+    }
+
+    /**
+     * @param string $poster
+     */
+    public function setPoster(string $poster): void
+    {
+        $this->poster = $poster;
+    }
+
 
     /**
      * @return int|null
@@ -102,6 +120,7 @@ class Producte implements Entity
             "nom"=>$this->getNom(),
             "descripcio"=>$this->getDescripcio(),
             "preu" =>$this->getPreu(),
+            "poster" =>$this->getPoster(),
             "valoracio" => 0
         ];
     }

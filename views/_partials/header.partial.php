@@ -3,7 +3,7 @@
 
         <div class="col-2 logoCont">
 
-            <a href="Home.html"><img class="logo" src="/images/imgHome/AGROW-logo/agrow-blanco-amarillo (1).png"></a>
+            <a href="/"><img class="logo" src="/images/imgHome/AGROW-logo/agrow-blanco-amarillo (1).png"></a>
 
         </div>
         <div class="col-1">
@@ -18,19 +18,39 @@
 
             <a href="/productes">Productes</a>
         </div>
+
+        <?php
+        $loggedUser = $_SESSION["loggedUser"]??[];
+        if($loggedUser != []){
+
+            ?>
+            <div class="col-1" id="header-col">
+
+                <a href="/logout">Log Out</a>
+
+            </div>
+
+            <?php
+
+        }else{
+            ?>
+
+            <div class="col-1" id="header-col">
+
+                <a href="/login">Login</a>
+
+            </div>
+            <?php
+        } ?>
+
         <div class="col-1" id="header-col">
 
-            <a href="Perfil.html">Perfil</a>
+            <a href="/users">Usuaris</a>
 
         </div>
         <div class="col-1" id="header-col">
 
             <a href="#">Envios</a>
-
-        </div>
-        <div class="col-1 logoCont">
-
-            <a href="IniciSessio.html"><img class="logo2" src="/images/imgHome/img/log-in.png"></a>
 
         </div>
 

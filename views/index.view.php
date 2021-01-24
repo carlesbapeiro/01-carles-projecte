@@ -1,10 +1,16 @@
 <div class="container">
     <h2 class="titol-producte">PRODUCTES</h2>
+    <hr  style="height:1px;border:none;color:#333;background-color:#333;">
     <div class="row">
 
-        <?php foreach ($productes as $producte): ?>
+        <?php use App\Entity\Producte;
+
+        foreach ($productes as $producte): ?>
+
             <div class="col-lg-3 col-md-6 mb-4">
                 <div class="card h-100">
+
+                    <a href=""><?= generar_imagen_local(Producte::POSTER_PATH.'/', $producte->getPoster(),$producte->getNom() ,"card-img-top", 250, 50) ?></a>
                     <div class="card-body">
                         <h4 class="card-title">
                             <a href="<?php ?>"><?= $producte->getNom() ?></a>

@@ -11,6 +11,10 @@
         <label for="preu">Preu:</label>
         <input id="preu" class="form-control" type="number" name="preu" required>
     </div>
+    <div class="form-group">
+        <label for="poster">Poster:</label>
+        <input id="poster" class="form-control" type="file" name="poster" required>
+    </div>
 
     <div class="form-group text-right">
         <button type="submit" class="btn btn-primary">Submit</button>
