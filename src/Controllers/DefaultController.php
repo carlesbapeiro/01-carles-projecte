@@ -9,6 +9,7 @@ use App\Model\GenreModel;
 use App\Model\MovieModel;
 use App\Model\PartnerModel;
 use App\Model\producteModel;
+use App\Model\UserModel;
 use Exception;
 use PDOException;
 use App\Entity\Movie;
@@ -20,6 +21,10 @@ class DefaultController extends Controller
         try {
             $producteModel = App::getModel(producteModel::class);
             $productes = $producteModel->findAll(["nom"=>"ASC"]);
+
+            $userModel = App::getModel(userModel::class);
+            $allUser = $userModel->findAll(["username"=>"ASC"]);
+
 
 
         } catch (PDOException $PDOException) {
@@ -33,7 +38,7 @@ class DefaultController extends Controller
 
         $router = App::get(Router::class);
 
-        return $this->response->renderView("index", "default", compact('title', 'productes', 'router'));
+        return $this->response->renderView("index", "default", compact('title', 'productes', 'router','allUser'));
     }
 
     public function contact() {

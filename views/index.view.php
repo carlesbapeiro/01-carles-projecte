@@ -10,21 +10,44 @@
             <div class="col-lg-3 col-md-6 mb-4">
                 <div class="card h-100">
 
-                    <a href=""><?= generar_imagen_local(Producte::POSTER_PATH.'/', $producte->getPoster(),$producte->getNom() ,"card-img-top", 250, 50) ?></a>
+                    <a href=""><?= generar_imagen_local(Producte::POSTER_PATH.'/', $producte->getPoster(),$producte->getNom() ,"card-img-top", 200) ?></a>
                     <div class="card-body">
                         <h4 class="card-title">
                             <a href="<?php ?>"><?= $producte->getNom() ?></a>
                         </h4>
                         <p class="card-text"><em><?= $producte->getDescripcio() ?></em></p>
+                        <hr  style="height:1px;border:none;color:#333;background-color:#333;">
                         <p class="card-text text-muted"><?= $producte->getPreu() ?></p>
+                        <?php
+                        //Revisar per gestionar
+
+                        foreach ($allUser as $usuaris){
+                            $id = $usuaris ->getId();
+                            $usuari_id = $producte->getUsuariId();
+                            if($usuari_id == $id) {
+
+                                $nom = $usuaris->getUsername();
+
+                                //break per a ixir del bucle
+                                break;
+                            }else{
+
+                                $nom = "undefined";
+                            }
+
+
+                        }
+
+                        ?>
+
+                        <p class="card-text text-muted">Venedor: <?= $nom ?></p>
+
+
                     </div>
+
                 </div>
             </div>
         <?php endforeach; ?>
-
-
-
-
 
 
     </div>
