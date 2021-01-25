@@ -19,8 +19,8 @@ class UserController extends Controller
 
     public function index(): string
     {
-        if (!Security::isAuthenticatedUser())
-            App::get(Router::class)->redirect('login');
+/*        if (!Security::isAuthenticatedUser())
+            App::get(Router::class)->redirect('login');*/
 
         $title = "Users - Movie FX";
         $errors = [];

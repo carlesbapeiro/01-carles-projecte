@@ -33,7 +33,7 @@ class AuthController extends Controller
 
                 $_SESSION["loggedUser"] = $user->getId();
                 $_SESSION["role"] = $user->getRole();
-                App::get("router")->redirect("movies");
+                App::get("router")->redirect("productes");
             }
 
         }

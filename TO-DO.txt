@@ -1,0 +1,6 @@
+Fer el perfil personal dels usuaris.
+Afegir un mail als users.
+Crear una relacio productes-categoria.
+Mostrar la categoria en la creacio i la mostrada de productes.
+Que es puguen crear, editar i modificar categories.
+No poder borrar un categoria si te un producte

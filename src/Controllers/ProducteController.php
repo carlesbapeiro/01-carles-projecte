@@ -24,7 +24,7 @@ class ProducteController extends Controller
     {
         try {
 
-/*            if (!Security::isAuthenticatedUser())
+/*          if (!Security::isAuthenticatedUser())
                 App::get(Router::class)->redirect('login');*/
 
             $producteModel = App::getModel(producteModel::class);
@@ -60,6 +60,7 @@ class ProducteController extends Controller
     {
 /*        if (!Security::isAuthenticatedUser())
             App::get(Router::class)->redirect('login');*/
+
         $title = "Nou producte - Agrow";
         return $this->response->renderView("productes-create", "default", compact('title'));
     }
@@ -123,8 +124,8 @@ class ProducteController extends Controller
 
     public function delete(int $id): string
     {
-        if (!Security::isAuthenticatedUser())
-            App::get(Router::class)->redirect('login');
+/*        if (!Security::isAuthenticatedUser())
+            App::get(Router::class)->redirect('login');*/
 
         $errors = [];
         $producte = null;
@@ -182,7 +183,7 @@ class ProducteController extends Controller
     public function filter(): string
     {
         // S'executa amb el POST
-
+        $router = App::get(Router::class);
         $title = "Productes - Agrow";
         $errors = [];
 
@@ -210,11 +211,14 @@ class ProducteController extends Controller
             }
 
         } else {
-            $error = "Cal introduir una paraula de búsqueda";
+            $pdo = App::get("DB");
+            $producteModel = new producteModel($pdo);
+            $productes = $producteModel->executeQuery("SELECT * FROM producte");
+            $errors[] = "Cal introduir una paraula de búsqueda";
 
         }
         return $this->response->renderView("productes", "default", compact('title', 'productes',
-            'producteModel', 'errors'));
+            'producteModel', 'errors',"router"));
     }
 
 

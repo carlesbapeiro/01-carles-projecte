@@ -19,6 +19,49 @@
             <a href="/productes">Productes</a>
         </div>
 
+
+
+        <?php
+        $rol = $_SESSION["role"]??"";
+
+        if($rol == "ROLE_ADMIN"){
+
+        ?>
+
+            <div class="col-1" id="header-col">
+
+                <a href="/users">Usuaris</a>
+
+            </div>
+
+
+        <?php
+                } ?>
+
+
+<!--        <div class="col-1" id="header-col">
+
+            <a href="#">Envios</a>
+
+        </div>-->
+
+        <?php
+        $rol = $_SESSION["role"]??"";
+
+        if($rol == "ROLE_ADMIN"){
+
+            ?>
+
+            <div class="col-1" id="header-col">
+
+                <a href="/categories">Categoria</a>
+
+            </div>
+
+
+            <?php
+        } ?>
+
         <?php
         $loggedUser = $_SESSION["loggedUser"]??[];
         if($loggedUser != []){
@@ -26,7 +69,7 @@
             ?>
             <div class="col-1" id="header-col">
 
-                <a href="/logout">Log Out</a>
+                <a href="/logout">LogOut</a>
 
             </div>
 
@@ -43,16 +86,8 @@
             <?php
         } ?>
 
-        <div class="col-1" id="header-col">
 
-            <a href="/users">Usuaris</a>
 
-        </div>
-        <div class="col-1" id="header-col">
-
-            <a href="#">Envios</a>
-
-        </div>
 
 
     </div>

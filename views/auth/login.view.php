@@ -8,16 +8,16 @@
                     <input type="text" class="form-control"
                            name="username" id="username"
                            value="<?= null ?? "" ?>"
-                           placeholder="Username:" required>
+                           placeholder="Username" required>
                 </div>
                 <div class="form-group">
-                    <label for="password">Contrasenya</label>
+                    <label for="password">Password</label>
                     <input type="text" class="form-control"
                            name="password" id="password"
                            value="<?= null ?? "" ?>"
-                           placeholder="Password:" required>
+                           placeholder="Password" required>
                 </div>
-                <input type="submit" value="Login">
+                <input type="submit" class="btn btn-dark" value="Login">
             </form>
         </div>
 

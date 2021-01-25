@@ -8,13 +8,15 @@ use App\Model\UserModel;
 
 class Security
 {
-    public static function isAuthenticatedUser(): bool
+/*    public static function isAuthenticatedUser(): bool
     {
+
+
         $user = App::get('user');
         if (App::get('user')!==null)
             return true;
         return false;
-    }
+    }*/
     public static function isUserGranted(string $minRole): bool
     {
         if ($minRole === 'ROLE_ANONYMOUS')

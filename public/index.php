@@ -9,7 +9,7 @@ use App\Core\Router;
 
     require_once __DIR__ . '/../src/bootstrap.php';
 
-    session_start();
+
     $request = new Request();
 
     $url = $request->getPath();
