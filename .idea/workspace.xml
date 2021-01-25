@@ -20,23 +20,28 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e2882fb9-50f7-419a-8a93-29abca5336c9" name="Default Changelist" comment="nuevas cosas">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TO-DO.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Controllers/CategoriaController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Entity/Categoria.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Model/categoriaModel.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/views/categories.view.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_22_01_2021_17_24__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_22_01_2021_17_24__Default_Changelist_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TO-DO.txt" beforeDir="false" afterPath="$PROJECT_DIR$/TO-DO.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config/routes.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/routes.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controllers/AuthController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/AuthController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/estilsGenerals.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/estilsGenerals.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controllers/ProducteController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/ProducteController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controllers/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/UserController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Core/Security.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Core/Security.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/bootstrap.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/bootstrap.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Producte.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Producte.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/User.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/views/_partials/header.partial.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/_partials/header.partial.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/views/auth/login.view.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/auth/login.view.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/movies.view.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/productes-delete.view.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/productes-delete.view.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/productes-edit.view.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/productes-edit.view.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/views/productes.view.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/productes.view.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/productes/form-delete.view.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/productes/form-delete.view.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/productes/form-edit.view.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/productes/form-edit.view.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/users-edit.view.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/users-edit.view.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/users.view.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/users.view.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/users/form-create.view.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/users/form-create.view.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/users/form-delete.view.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/users/form-delete.view.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/users/form-edit.view.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/users/form-edit.view.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -78,7 +83,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../projecte/01-carles" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="php.override.implement.member.chooser.php.doc" value="NONE" />
     <property name="settings.editor.selected.configurable" value="reference.webide.settings.project.settings.php.debug" />
@@ -156,6 +161,24 @@
     <MESSAGE value="nuevas cosas" />
     <MESSAGE value="Usuaris, modificar i borrar productes" />
     <option name="LAST_COMMIT_MESSAGE" value="Usuaris, modificar i borrar productes" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="562" y="121" key="#com.intellij.ide.util.MemberChooser" timestamp="1611597552726">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="562" y="121" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1611597552726" />
+    <state x="499" y="167" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1611592203179">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="499" y="167" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1536.824@0.0.1536.824" timestamp="1611592203179" />
+    <state x="549" y="167" key="FileChooserDialogImpl" timestamp="1611592112762">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1611592112762" />
+    <state x="604" y="336" key="NewPhpFileDialog" timestamp="1611592323426">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="604" y="336" key="NewPhpFileDialog/0.0.1536.824@0.0.1536.824" timestamp="1611592323426" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

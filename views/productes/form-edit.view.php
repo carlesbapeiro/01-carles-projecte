@@ -1,5 +1,6 @@
 <form action="<?php $_SERVER['PHP_SELF']; ?>" method="post" enctype="multipart/form-data" novalidate>
     <input type="hidden" name="id" value="<?= $producte->getId() ?>">
+    <input type="hidden" name="usuari_id" value="<?= $producte->getUsuariId() ?>">
     <div class="form-group">
         <label for="nom">Nom:</label>
         <input id="nom" class="form-control" type="text" name="nom" value="<?= $producte->getNom() ?>" required>
@@ -19,6 +20,7 @@
         <input id="poster" class="form-control" type="file" name="poster" value="<?= $producte->getPoster() ?>" required>
         <small><?= $producte->getPoster() ?></small>
     </div>
+
     <div class="form-group text-right">
         <button type="submit" class="btn btn-primary">Submit</button>
     </div>

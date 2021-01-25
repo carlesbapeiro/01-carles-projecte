@@ -13,6 +13,7 @@ class User implements Entity
     private string $username;
     private string $password;
     private string $role;
+    private string $mail;
 
     /**
      * @return int
@@ -86,17 +87,36 @@ class User implements Entity
         return $this;
     }
 
+    /**
+     * @return string
+     */
+    public function getMail(): string
+    {
+        return $this->mail;
+    }
+
+    /**
+     * @param string $mail
+     */
+    public function setMail(string $mail): void
+    {
+        $this->mail = $mail;
+    }
+
 
     /**
      * @return array|mixed
      */
+
+
     public function toArray(): array
     {
         return [
             "id"=>$this->getId(),
             "username"=>$this->getUsername(),
             "password"=>$this->getPassword(),
-            "role"=>$this->getRole()
+            "role"=>$this->getRole(),
+            "mail"=>$this->getMail()
         ];
     }
 }

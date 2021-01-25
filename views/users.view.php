@@ -31,7 +31,7 @@
         <table class="table table-condensed">
             <tr>
                 <th>Nom</th>
-                <th>Contrassenya</th>
+                <th>Mail</th>
 
                 <th>Actions</th>
             </tr>
@@ -40,7 +40,7 @@
                 <tr>
 
                     <td><?= $user->getUsername() ?></td>
-                    <td><?= $user->getPassword() ?></td>
+                    <td><?= $user->getMail() ?></td>
 
                     <td style="width: 140px"><a href="/users/<?= $user->getId() ?>/edit">
                             <button type="button" class="btn btn-primary"><i class="fa fa-edit"></i></button>

@@ -1,6 +1,29 @@
-Fer el perfil personal dels usuaris.
-Afegir un mail als users.
+Fer el perfil personal dels usuaris. (fet)
+Afegir un mail als users.(fet)
 Crear una relacio productes-categoria.
 Mostrar la categoria en la creacio i la mostrada de productes.
 Que es puguen crear, editar i modificar categories.
 No poder borrar un categoria si te un producte
+Que filtre el productes per data i arreglar el filtre per preu
+Revisar la gestio del error en productes.view.php
+
+
+
+
+//////Preguntes//////
+
+
+No s'ha de poder borrar un usuari que te productes asociats, per tant alhora de borrar-lo hauriem d'agafar el seu id, traure tots els
+productes i comprovar un per un que no tenen un id de usuari igual. O be ( i mes rapid, perque l'altra opcio es molt pesada) podriem borrar
+tots els productes que tenen un usuari_id associat fer una sencilla busqueda.
+
+
+Quan es mostren els productes en el index de productes, podria fer que mostres el nom si amb el atribut nou que li afegire a la taula fera
+una consulta sql i busques l'usuari amb find(id_usuari);
+
+
+/////CONSULTES//////
+
+Consultar en el profesor el que he fet el productes.view.php alhora de mostrar el nom dels anunciants
+
+Consultar si en producteController en el metode findby l'he utilitzat correctament

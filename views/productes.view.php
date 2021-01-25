@@ -61,6 +61,7 @@
                             class="fa fa-arrow-up"></i></a></th>
             <th>Descripcio</th>
             <th>Preu</th>
+            <th>Anunciant</th>
             <th>Actions</th>
         </tr>
 
@@ -82,6 +83,29 @@
                 <td><?= $producte->getNom() ?></td>
                 <td><?= $producte->getDescripcio() ?></td>
                 <td><?= $producte->getPreu() ?></td>
+
+                <?php
+                //Revisar per gestionar
+
+                foreach ($allUser as $usuaris){
+                    $id = $usuaris ->getId();
+                    $usuari_id = $producte->getUsuariId();
+                    if($usuari_id == $id) {
+
+                        $nom = $usuaris->getUsername();
+
+                        //break per a ixir del bucle
+                        break;
+                    }else{
+
+                        $nom = "undefined";
+                    }
+
+
+                }
+
+                ?>
+                <td><?= $nom ?></td>
 
                 <td style="width: 140px"><a href="/productes/<?= $producte->getId() ?>/edit">
                         <button type="button" class="btn btn-primary"><i class="fa fa-edit"></i></button>

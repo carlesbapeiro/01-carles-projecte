@@ -1,7 +1,7 @@
 <div class="container">
     <div class="row">
         <div class="col-8">
-            <h1>Edit productes</h1>
+            <h1>Editar productes</h1>
             <?php if (!empty($errors) || ($isGetMethod)) : ?>
                 <?php if (!empty($errors)) : ?>
                     <ul>

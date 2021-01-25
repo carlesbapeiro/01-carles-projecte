@@ -34,7 +34,7 @@ html {
 .menu{
     position: fixed;
     background-color: black;
-    z-index: 1000;
+    z-index: 999;
     
 }
 .logoCont{
@@ -64,9 +64,33 @@ html {
 
 #header-col a:hover{
     
-    color: rgb(248, 171, 55);;
-    border: 1px solid rgb(248, 171, 55);;
+    color: rgb(248, 171, 55);
+    border: 1px solid rgb(248, 171, 55);
 }
+/*#header-col2{
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}*/
+#header-col2 a{
+
+    border-radius: 10px;
+    padding: 10px;
+    padding-left: 30px;
+    padding-right: 30px;
+    border: 1px solid transparent;
+    text-decoration: none;
+    color: black;
+}
+#header-col2 a:hover{
+
+    color: white;
+    border: 1px solid black;
+}
+
+
 
 /*FI HEADER*/
 

@@ -12,6 +12,7 @@ class Producte implements Entity
     private string $nom;
     private string $valoracio;
     private string $poster;
+    private int $usuari_id;
 
     /**
      * @return string
@@ -112,6 +113,24 @@ class Producte implements Entity
         $this->valoracio = $valoracio;
     }
 
+    /**
+     * @return int
+     */
+    public function getUsuariId(): int
+    {
+        return $this->usuari_id;
+    }
+
+    /**
+     * @param int $usuari_id
+     */
+    public function setUsuariId(int $usuari_id): void
+    {
+        $this->usuari_id = $usuari_id;
+    }
+
+
+
 
     public function toArray(): array
     {
@@ -121,7 +140,8 @@ class Producte implements Entity
             "descripcio"=>$this->getDescripcio(),
             "preu" =>$this->getPreu(),
             "poster" =>$this->getPoster(),
-            "valoracio" => 0
+            "valoracio" => 0,
+            "usuari_id"=>$this->getUsuariId()
         ];
     }
 }

@@ -13,6 +13,7 @@ use App\Entity\Producte;
 use App\Exception\UploadedFileException;
 use App\Exception\UploadedFileNoFileException;
 use App\Model\producteModel;
+use App\Model\UserModel;
 use App\Utils\UploadedFile;
 use Exception;
 use PDOException;
@@ -24,14 +25,26 @@ class ProducteController extends Controller
     {
         try {
 
-/*          if (!Security::isAuthenticatedUser())
-                App::get(Router::class)->redirect('login');*/
 
             $producteModel = App::getModel(producteModel::class);
-            $productes = $producteModel->findAll(["nom" => "ASC"]);
 
+            $userModel = App::getModel(userModel::class);
+            $allUser = $userModel->findAll(["username"=>"ASC"]);
+            $user = $userModel->find($_SESSION["loggedUser"]);
 
+            //var_dump($productes);
+            //Codi per a traure el usuari (part de traure els productes per usuari)
+            //Depenent del rol es mostraran tots o no, el administrador els veura tots
+            if($_SESSION["role"] == "ROLE_ADMIN"){
+                $productes = $producteModel->findAll(["nom" => "ASC"]);
 
+            }else{
+
+                $productes = $producteModel->findBy(["usuari_id"=>$_SESSION["loggedUser"]]);
+            }
+            //var_dump($_SESSION["role"]);
+            //var_dump($_SESSION["loggedUser"]);
+            //var_dump($user->getUsername());
 
         } catch (PDOException $PDOException) {
             echo $PDOException->getMessage();
@@ -52,22 +65,20 @@ class ProducteController extends Controller
 
         $router = App::get(Router::class);
 
-        return $this->response->renderView("productes", "default", compact('title', 'productes', 'router','messageUser'));
+        return $this->response->renderView("productes", "default", compact('title', 'productes', 'router','messageUser','user','allUser'));
 
     }
 
     public function create(): string
     {
-/*        if (!Security::isAuthenticatedUser())
-            App::get(Router::class)->redirect('login');*/
+
 
         $title = "Nou producte - Agrow";
         return $this->response->renderView("productes-create", "default", compact('title'));
     }
     public function store(): string
     {
-/*        if (!Security::isAuthenticatedUser())
-            App::get(Router::class)->redirect('login');*/
+
 
         $errors = [];
         $title = "Nou Producte";
@@ -84,6 +95,7 @@ class ProducteController extends Controller
         if (empty($preu)) {
             $errors[] = "No pots deixar el preu buit";
         }
+        $usuari_id = $_SESSION["loggedUser"];
 
         if (empty($errors)) {
             try {
@@ -105,6 +117,7 @@ class ProducteController extends Controller
                 $producte->setDescripcio($descripcio);
                 $producte->setPreu($preu);
                 $producte->setPoster($filename);
+                $producte->setUsuariId($usuari_id);
 
 
                 $producteModel = App::getModel(producteModel::class);
@@ -224,8 +237,7 @@ class ProducteController extends Controller
 
     public function edit(int $id)
     {
-/*        if (!Security::isAuthenticatedUser())
-            App::get(Router::class)->redirect('login');*/
+
 
         $isGetMethod = true;
         $errors = [];
@@ -256,6 +268,8 @@ class ProducteController extends Controller
             }
 
             $preu = filter_input(INPUT_POST, "preu", FILTER_VALIDATE_INT);
+            $usuari_id = filter_input(INPUT_POST, "usuari_id", FILTER_VALIDATE_INT);
+
 
             /*$releaseDate = DateTime::createFromFormat("Y-m-d", $_POST["release_date"]);*/
           /*  if (empty($releaseDate)) {
@@ -290,6 +304,7 @@ class ProducteController extends Controller
                     $producte->setDescripcio($descripcio);
                     $producte->setPreu($preu);
                     $producte->setPoster($poster);
+                    $producte->setUsuariId($usuari_id);
 
                     $producteModel->update($producte);
 

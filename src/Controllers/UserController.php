@@ -6,10 +6,12 @@ namespace App\Controllers;
 
 use App\Core\App;
 use App\Core\Controller;
+use App\Core\Exception\NotFoundException;
 use App\Core\Router;
 
 use App\Core\Security;
 use App\Entity\User;
+use App\Model\producteModel;
 use App\Model\UserModel;
 use Exception;
 use PDO;
@@ -58,7 +60,14 @@ class UserController extends Controller
         }
         $role = filter_input(INPUT_POST, "role");
         if (empty($role)) {
-            $errors[] = "The role is mandatory";
+
+            //Rol per defecte
+            $role = "ROLE_USER";
+            //$errors[] = "The role is mandatory";
+        }
+        $mail = filter_input(INPUT_POST, "mail");
+        if (empty($mail)) {
+            $errors[] = "The mail is mandatory";
         }
 
         $password = App::get("security")->encode($password);
@@ -70,6 +79,7 @@ class UserController extends Controller
                 $user->setUsername($name);
                 $user->setPassword($password);
                 $user->setRole($role);
+                $user->setMail($mail);
 
 
 
@@ -90,11 +100,14 @@ class UserController extends Controller
         $userModel = App::getModel(UserModel::class);
         $title = "Partner delete - Movie FX";
         $user = $userModel->find($id);
+
+        $producteModel = App::getModel(ProducteModel::class);
+        $productesAssociats = $producteModel->findBy(["usuari_id"=>$id]);
         $router = App::get(Router::class);
 
 
         return $this->response->renderView("users-delete", "default",
-            compact('title', 'user', 'errors', 'router'));
+            compact('title', 'user', 'errors', 'router','productesAssociats'));
 
 
     }
@@ -109,8 +122,19 @@ class UserController extends Controller
             $id = filter_input(INPUT_POST, "id", FILTER_VALIDATE_INT);
             $userModel = App::getModel(UserModel::class);
             $user = $userModel ->find($id);
+            $producteModel = App::getModel(ProducteModel::class);
+            $productesAssociats = $producteModel->findBy(["usuari_id"=>$id]);
+
+
             if (!$userModel->delete($user))
                 $errors[] = "There were errors deleting entity";
+
+            foreach ($productesAssociats as $producte){
+
+                if(!$producteModel->delete($producte))
+                    $errors[] = "There were errors deleting entity";
+            }
+
 
         }
         else
@@ -162,6 +186,12 @@ class UserController extends Controller
         if (empty($password)) {
             $errors[] = "The password is mandatory";
         }
+        $mail = filter_input(INPUT_POST, "mail", FILTER_VALIDATE_EMAIL);
+
+        if (empty($mail)) {
+            $errors[] = "The mail is mandatory";
+        }
+
 
         $password = App::get("security")->encode($password);
 
@@ -172,6 +202,8 @@ class UserController extends Controller
                 $user = $userModel->find($id);
                 $user->setUsername($name);
                 $user->setPassword($password);
+                $user->setMail($mail);
+
                 // updating changes
                 $userModel->update($user);
             } catch (Exception $e) {
@@ -180,6 +212,26 @@ class UserController extends Controller
         }
         return $this->response->renderView("users-update");
     }
+
+/*    public function show(int $id)
+    {
+        $errors = [];
+        if (!empty($id)) {
+            try {
+                $userModel = new UserModel(App::get("DB"));
+                $user = $userModel->find($id);
+
+            } catch (NotFoundException $notFoundException) {
+                $errors[] = $notFoundException->getMessage();
+            }
+        }
+        return $this->response->renderView("perfil", "default", compact(
+            "errors", "user"));
+
+
+    }*/
+
+
 
 
 }

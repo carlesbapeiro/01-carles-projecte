@@ -1,6 +1,13 @@
 <div class="container" >
     <div class="row">
-        <div class="col-sm-12">
+
+        <div class="col-sm-6 text-center">
+            <h3>No tens un compte?</h3>
+            <br>
+            <a href="users/create" class="btn btn-info">Registra't!</a>
+        </div>
+        <div class="col-sm-6">
+
             <h3>Login</h3>
             <form method="post" novalidate>
                 <div class="form-group">

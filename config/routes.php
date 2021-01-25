@@ -11,14 +11,14 @@ $router->get("productes", "ProducteController", "index",[],"","ROLE_USER");
 $router->post("productes", "ProducteController", "filter", [],"productes_filter");
 
 
-$router->get("productes/create", "ProducteController", "create",[],"","ROLE_ADMIN");
-$router->post("productes/create", "ProducteController", "store",[],"","ROLE_ADMIN");
+$router->get("productes/create", "ProducteController", "create",[],"","ROLE_USER");
+$router->post("productes/create", "ProducteController", "store",[],"","ROLE_USER");
 
-$router->get("productes/:id/delete", "ProducteController", "delete",["id"=>"number"], "productes_delete","ROLE_ADMIN");
-$router->post("productes/delete", "ProducteController", "destroy", [],"productes_destroy","ROLE_ADMIN");
+$router->get("productes/:id/delete", "ProducteController", "delete",["id"=>"number"], "productes_delete","ROLE_USER");
+$router->post("productes/delete", "ProducteController", "destroy", [],"productes_destroy","ROLE_USER");
 
-$router->get("productes/:id/edit", "ProducteController", "edit", ["id" => "number"], "productes_edit","ROLE_ADMIN");
-$router->post("productes/:id/edit", "ProducteController", "edit", ["id" => "number"],"productes_edit","ROLE_ADMIN");
+$router->get("productes/:id/edit", "ProducteController", "edit", ["id" => "number"], "productes_edit","ROLE_USER");
+$router->post("productes/:id/edit", "ProducteController", "edit", ["id" => "number"],"productes_edit","ROLE_USER");
 
 /* Usuaris */
 
