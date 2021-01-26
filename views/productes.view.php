@@ -24,7 +24,7 @@
             </div>
             <div class="form-check-inline">
                 <label class="form-check-inline">
-                    <input class="form-check-input" type="radio" name="optradio" id="preu" value="preu">&nbsp;Mes barats                        &nbsp;
+                    <input class="form-check-input" type="radio" name="optradio" id="descripcio" value="descripcio">&nbsp;Descripcio                       &nbsp;
                 </label></div>
             <div class="form-check-inline">
                 <label class="form-check-inline">
@@ -87,7 +87,8 @@
                 <?php
                 //Revisar per gestionar
 
-                foreach ($allUser as $usuaris){
+
+   /*             foreach ($allUser as $usuaris){
                     $id = $usuaris ->getId();
                     $usuari_id = $producte->getUsuariId();
                     if($usuari_id == $id) {
@@ -102,10 +103,10 @@
                     }
 
 
-                }
+                }*/
 
                 ?>
-                <td><?= $nom ?></td>
+                <td><?= $producte->getUsuariId() ?></td>
 
                 <td style="width: 140px"><a href="/productes/<?= $producte->getId() ?>/edit">
                         <button type="button" class="btn btn-primary"><i class="fa fa-edit"></i></button>

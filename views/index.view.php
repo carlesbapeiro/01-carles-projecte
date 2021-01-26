@@ -15,13 +15,13 @@
                         <h4 class="card-title">
                             <a href="<?php ?>"><?= $producte->getNom() ?></a>
                         </h4>
-                        <p class="card-text"><em><?= $producte->getDescripcio() ?></em></p>
+                        <p class="card-text"><em><?= $producte->getPreu() ?></em></p>
                         <hr  style="height:1px;border:none;color:#333;background-color:#333;">
-                        <p class="card-text text-muted"><?= $producte->getPreu() ?></p>
+                        <p class="card-text text-muted"><?= $producte->getDescripcio() ?></p>
                         <?php
                         //Revisar per gestionar
 
-                        foreach ($allUser as $usuaris){
+                        /*foreach ($allUser as $usuaris){
                             $id = $usuaris ->getId();
                             $usuari_id = $producte->getUsuariId();
                             if($usuari_id == $id) {
@@ -36,11 +36,11 @@
                             }
 
 
-                        }
+                        }*/
 
                         ?>
 
-                        <p class="card-text text-muted">Venedor: <?= $nom ?></p>
+                        <p class="card-text text-muted">Venedor: <?= $producte->getUsuariId() ?></p>
 
 
                     </div>

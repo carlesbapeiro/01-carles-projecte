@@ -7,6 +7,11 @@ No poder borrar un categoria si te un producte
 Que filtre el productes per data i arreglar el filtre per preu
 Revisar la gestio del error en productes.view.php
 
+Fer pagina modal per a mostrar la info dels productes amb mes detall que tinga un toolkit que ens envie a la pagina show del producte
+Paginacio bootstrap
+
+// TODO: Gestionar contrassenyes preguntant la contrassenya actual.
+
 
 
 

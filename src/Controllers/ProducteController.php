@@ -28,9 +28,7 @@ class ProducteController extends Controller
 
             $producteModel = App::getModel(producteModel::class);
 
-            $userModel = App::getModel(userModel::class);
-            $allUser = $userModel->findAll(["username"=>"ASC"]);
-            $user = $userModel->find($_SESSION["loggedUser"]);
+
 
             //var_dump($productes);
             //Codi per a traure el usuari (part de traure els productes per usuari)
@@ -40,7 +38,9 @@ class ProducteController extends Controller
 
             }else{
 
-                $productes = $producteModel->findBy(["usuari_id"=>$_SESSION["loggedUser"]]);
+                $user = App::get("user");
+                $id = $user->getId();
+                $productes = $producteModel->findBy(["usuari_id"=>$id]);
             }
             //var_dump($_SESSION["role"]);
             //var_dump($_SESSION["loggedUser"]);
@@ -65,7 +65,7 @@ class ProducteController extends Controller
 
         $router = App::get(Router::class);
 
-        return $this->response->renderView("productes", "default", compact('title', 'productes', 'router','messageUser','user','allUser'));
+        return $this->response->renderView("productes", "default", compact('title', 'productes', 'router','messageUser'));
 
     }
 
@@ -199,39 +199,55 @@ class ProducteController extends Controller
         $router = App::get(Router::class);
         $title = "Productes - Agrow";
         $errors = [];
+        $user =App::get("user");
+        $id = $user->getId();
+
+        //Codi brosa
+        $userModel = App::getModel(userModel::class);
+        $allUser = $userModel->findAll(["username"=>"ASC"]);
+        //Fi codi brosa
+
 
         $text = filter_input(INPUT_POST, "text", FILTER_SANITIZE_STRING);
 
         $tipo_busqueda = filter_input(INPUT_POST, "optradio", FILTER_SANITIZE_STRING);
 
+
+
+            //$productes = $producteModel->findBy(["usuari_id"=>$_SESSION["loggedUser"]]);
+
         if (!empty($text)) {
             $pdo = App::get("DB");
             $producteModel = new producteModel($pdo);
             if ($tipo_busqueda == "both") {
-                $productes = $producteModel->executeQuery("SELECT * FROM producte WHERE preu LIKE :text OR nom LIKE :text",
-                    ["text" => "%$text%"]);
+                $productes = $producteModel->executeQuery("SELECT * FROM producte WHERE descripcio LIKE :text OR nom LIKE :text AND usuari_id LIKE :id",
+                    ["text" => "%$text%",
+                     "id"=>"%$id%"  ]);
 
             }
             if ($tipo_busqueda == "nom") {
-                $productes = $producteModel->executeQuery("SELECT * FROM producte WHERE nom LIKE :text",
-                    ["text" => "%$text%"]);
+                $productes = $producteModel->executeQuery("SELECT * FROM producte WHERE nom LIKE :text AND usuari_id LIKE :id",
+                    ["text" => "%$text%",
+                     "id"=>"%$id%"]);
 
             }
-            if ($tipo_busqueda == "preu") {
-                $productes = $producteModel->executeQuery("SELECT * FROM producte WHERE preu LIKE :text",
-                    ["text" => "%$text%"]);
+            if ($tipo_busqueda == "descripcio") {
+                $productes = $producteModel->executeQuery("SELECT * FROM producte WHERE descripcio LIKE :text AND usuari_id LIKE :id",
+                    ["text" => "%$text%",
+                        "id"=>"%$id%"]);
 
             }
 
         } else {
             $pdo = App::get("DB");
             $producteModel = new producteModel($pdo);
-            $productes = $producteModel->executeQuery("SELECT * FROM producte");
+            $productes = $producteModel->executeQuery("SELECT * FROM producte WHERE usuari_id LIKE :id",[
+                        "id"=>"%$id%"]);
             $errors[] = "Cal introduir una paraula de búsqueda";
 
         }
         return $this->response->renderView("productes", "default", compact('title', 'productes',
-            'producteModel', 'errors',"router"));
+            'producteModel', 'errors',"router",'allUser'));
     }
 
 

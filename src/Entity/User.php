@@ -8,7 +8,8 @@ use App\Core\Entity;
 
 class User implements Entity
 {
-
+    //TODO:FICAR UNA IMATGE DE PERFIL
+    //TODO:CREAR UNA PAGINA SEPARA DE EDITAR USUARIS AIXI COM PER A CAMBIAR LA CONTRASSENYA
     private ?int $id = null;
     private string $username;
     private string $password;

@@ -17,10 +17,20 @@
             <a href="/">Inici</a>
 
         </div>
-        <div class="col-1" id="header-col">
+        <?php
+        $rol = $_SESSION["role"]??"";
 
-            <a href="/productes">Productes</a>
-        </div>
+        if($rol === "ROLE_USER"){
+
+        ?>
+            <div class="col-1" id="header-col">
+
+                <a href="/productes">Productes</a>
+            </div>
+        <?php
+        }?>
+
+
         <?php if($loggedUser !=[]){
 
             ?>
@@ -120,6 +130,15 @@
 
 
 
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <div class="separador">
+
+            </div>
+        </div>
+    </div>
+</div>
 <div class="container">
     <div class="row">
         <div class="col-12">
