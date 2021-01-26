@@ -30,6 +30,7 @@
     <?php else: ?>
         <table class="table table-condensed">
             <tr>
+                <th>Foto</th>
                 <th>Nom</th>
                 <th>Mail</th>
 
@@ -39,6 +40,8 @@
             <?php foreach ($users as $user) { ?>
                 <tr>
 
+                    <td> <?= generar_imagen_local(User::FOTO_PATH . '/', $user->getFoto(),
+                            $user->getUsername(), 100, 100) ?> </td>
                     <td><?= $user->getUsername() ?></td>
                     <td><?= $user->getMail() ?></td>
 

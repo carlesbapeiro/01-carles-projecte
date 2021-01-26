@@ -13,6 +13,7 @@ return [
     ,
     "logfile" => "my_app.log",
     "productes_path" => "images/productes/",
+    "foto_path"=>"images/fotos/",
 
     "security" => ["roles" =>
         [

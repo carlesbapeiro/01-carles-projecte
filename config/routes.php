@@ -20,6 +20,9 @@ $router->post("productes/delete", "ProducteController", "destroy", [],"productes
 $router->get("productes/:id/edit", "ProducteController", "edit", ["id" => "number"], "productes_edit","ROLE_USER");
 $router->post("productes/:id/edit", "ProducteController", "edit", ["id" => "number"],"productes_edit","ROLE_USER");
 
+$router->get("users/:id/show", "UserController", "show",
+    ["id" => "number"], "users_show");
+
 /* Usuaris */
 
 $router->get("login","AuthController","login");
@@ -39,6 +42,14 @@ $router->post("users/delete", "UserController", "destroy", [],"users_destroy","R
 
 $router->get("users/:id/edit", "UserController", "edit", ["id"=>"number"], "users_edit");
 $router->post("users/:id/edit", "UserController", "update", ["id"=>"number"], "users_update");
+
+$router->get("users/:id/show", "UserController", "show",
+    ["id" => "number"], "users_show");
+
+$router->get("users/:id/check", "UserController", "check",
+    ["id" => "number"], "users_check");
+$router->post("users/:id/validate", "UserController", "validate",
+    ["id" => "number"], "users_validate");
 
 /*   Categories   */
 

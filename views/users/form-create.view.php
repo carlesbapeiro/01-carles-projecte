@@ -11,6 +11,10 @@
         <label for="password">Password:</label>
         <input id="password" class="form-control-file" type="text" name="password" required>
     </div>
+    <div class="form-group">
+        <label for="foto">Foto:</label>
+        <input id="foto" class="form-control" type="file" name="foto" required>
+    </div>
 
     <?php
     $rol = $_SESSION["role"]??"";

@@ -15,8 +15,15 @@
                value="<?=$user->getMail()?>" required>
     </div>
 
-
     <div class="form-group">
+        <label for="foto">Foto:</label>
+        <input type="hidden" name="foto" value="<?= $user->getFoto() ?>">
+        <input id="foto" class="form-control" type="file" name="foto" value="<?= $user->getFoto() ?>" required>
+        <small><?= $user->getFoto() ?></small>
+    </div>
+
+
+<!--    <div class="form-group">
         <p style="background-color: lightgrey">Has oblidat la teua contrassenya?</p>
         <label for="pass">Nova contrassenya:</label>
         <input type="hidden" name="pass"
@@ -25,7 +32,7 @@
                value="" required >
 
 
-    </div>
+    </div>-->
     <div class="form-group text-right">
         <button type="submit" class="btn btn-primary">Submit</button>
     </div>

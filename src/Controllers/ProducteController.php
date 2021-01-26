@@ -28,8 +28,6 @@ class ProducteController extends Controller
 
             $producteModel = App::getModel(producteModel::class);
 
-
-
             //var_dump($productes);
             //Codi per a traure el usuari (part de traure els productes per usuari)
             //Depenent del rol es mostraran tots o no, el administrador els veura tots
@@ -333,6 +331,7 @@ class ProducteController extends Controller
         return $this->response->renderView("productes-edit", "default", compact("isGetMethod",
             "errors", "producte"));
     }
+
 
 
 

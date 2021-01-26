@@ -36,7 +36,7 @@
             ?>
             <div class="col-1" id="header-col">
 
-                <a href="/users/<?=$loggedUser?>/edit">Perfil</a>
+                <a href="/users/<?=$loggedUser?>/show">Perfil</a>
             </div>
 
             <?php
@@ -95,7 +95,7 @@
                     <div class="col-3"></div>
                     <div class="col-2" id="header-col2">
 
-                        <a href="/users">Gestio suaris</a>
+                        <a href="/users">Gestio Usuaris</a>
 
                     </div>
                     <div class="col-2" id="header-col2">
@@ -130,15 +130,6 @@
 
 
 
-<div class="container">
-    <div class="row">
-        <div class="col-12">
-            <div class="separador">
-
-            </div>
-        </div>
-    </div>
-</div>
 <div class="container">
     <div class="row">
         <div class="col-12">

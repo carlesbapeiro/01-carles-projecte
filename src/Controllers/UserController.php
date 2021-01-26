@@ -1,6 +1,6 @@
 <?php
 
-
+//TODO:Cap la posibilitat de que si poses mal la contrassenya al inici de sessio et done error. Gestionar-ho.
 namespace App\Controllers;
 
 
@@ -11,8 +11,11 @@ use App\Core\Router;
 
 use App\Core\Security;
 use App\Entity\User;
+use App\Exception\UploadedFileException;
+use App\Exception\UploadedFileNoFileException;
 use App\Model\producteModel;
 use App\Model\UserModel;
+use App\Utils\UploadedFile;
 use Exception;
 use PDO;
 
@@ -70,7 +73,20 @@ class UserController extends Controller
             $errors[] = "The mail is mandatory";
         }
 
+
         $password = App::get("security")->encode($password);
+
+        if (empty($errors)) {
+            try {
+                $uploadedFile = new UploadedFile("foto", 1024 * 1024, ["image/jpeg", "image/jpg"]);
+                if ($uploadedFile->validate()) {
+                    $uploadedFile->save(User::FOTO_PATH, uniqid("MOV"));
+                    $filename = $uploadedFile->getFileName();
+                }
+            } catch (Exception $exception) {
+                $errors[] = "Error uploading file ($exception)";
+            }
+        }
 
         if (empty($errors)) {
             try {
@@ -80,6 +96,7 @@ class UserController extends Controller
                 $user->setPassword($password);
                 $user->setRole($role);
                 $user->setMail($mail);
+                $user->setFoto($filename);
 
 
 
@@ -115,7 +132,7 @@ class UserController extends Controller
     public function destroy(): string
     {
         $errors = [];
-        $title = "User delete - Movie FX";
+        $title = "User delete - Agrow";
         $userAnswer = filter_input(INPUT_POST, "userAnswer");
         $router = App::get(Router::class);
         if (!empty($userAnswer) && $userAnswer == "yes") {
@@ -146,7 +163,7 @@ class UserController extends Controller
 
     public function edit(int $id): string
     {
-        $title = "Edit User - Movie FX";
+        $title = "Edit User - Agrow";
         // 1. Get connection
         $pdo = App::get("DB");
 
@@ -181,11 +198,13 @@ class UserController extends Controller
         if (empty($name)) {
             $errors[] = "The username is mandatory";
         }
+
+        /*
         //Contrassenya
         $password = filter_input(INPUT_POST, "pass", FILTER_SANITIZE_FULL_SPECIAL_CHARS);
         if (empty($password)) {
             $errors[] = "The password is mandatory";
-        }
+        }*/
         $mail = filter_input(INPUT_POST, "mail", FILTER_VALIDATE_EMAIL);
 
         if (empty($mail)) {
@@ -193,7 +212,28 @@ class UserController extends Controller
         }
 
 
-        $password = App::get("security")->encode($password);
+        /*$password = App::get("security")->encode($password);*/
+
+        $filename = filter_input(INPUT_POST, "foto");
+
+        // if there are errors we don't upload image file
+        if (empty($errors)) {
+            try {
+                $uploadedFile = new UploadedFile("foto");
+                if ($uploadedFile->validate()) {
+                    // we get the path form config file
+                    $directory = App::get("config")["foto_path"];
+                    // we use uniqid to generate a uniqid filename;
+                    $uploadedFile->save($directory, uniqid("PTN"));
+                    // we get the generated name to save it in the db
+                    $filename = $uploadedFile->getFileName();
+                }
+            } catch (UploadedFileNoFileException $uploadedFileNoFileException) {
+                // When updating is possible not to upload a file
+            } catch (UploadedFileException $uploadedFileException) {
+                $errors[] = $uploadedFileException->getMessage();
+            }
+        }
 
         if (empty($errors)) {
             try {
@@ -201,8 +241,9 @@ class UserController extends Controller
                 // getting the partner by its identifier
                 $user = $userModel->find($id);
                 $user->setUsername($name);
-                $user->setPassword($password);
+                /*$user->setPassword($password);*/
                 $user->setMail($mail);
+                $user->setFoto($filename);
 
                 // updating changes
                 $userModel->update($user);
@@ -213,7 +254,7 @@ class UserController extends Controller
         return $this->response->renderView("users-update");
     }
 
-/*    public function show(int $id)
+    public function show(int $id)
     {
         $errors = [];
         if (!empty($id)) {
@@ -229,7 +270,89 @@ class UserController extends Controller
             "errors", "user"));
 
 
-    }*/
+    }
+
+
+
+    public function check(int $id)
+    {
+
+        $errors = [];
+        $userModel = App::getModel(UserModel::class);
+        $title = "Passwords - Agrow";
+        $user = $userModel->find($id);
+
+
+        $router = App::get(Router::class);
+
+
+        return $this->response->renderView("password-change", "default",
+            compact('title', 'user', 'errors', 'router'));
+
+
+    }
+
+    public function validate(int $id){
+
+        $errors = [];
+
+        $id = filter_input(INPUT_POST, "id", FILTER_VALIDATE_INT);
+        if (empty($id)) {
+            $errors[] = "Wrong ID";
+        }
+
+        //Contrassenya
+
+        $pass = filter_input(INPUT_POST, "pass", FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+        if (empty($pass)) {
+            $errors[] = "The old password is mandatory";
+        }
+        $pass2 = filter_input(INPUT_POST, "pass2", FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+        if (empty($pass2)) {
+            $errors[] = "The new password is mandatory";
+        }
+        if($pass != $pass2){
+
+        }else{
+            $errors[] = "No pots ficar la mateixa contrassenya. Prova un altra vegada!";
+        }
+
+        $pass = App::get("security")->encode($pass2);
+
+        $pass2 = App::get("security")->encode($pass2);
+
+
+        if (empty($errors)) {
+            try {
+                $userModel = App::getModel(UserModel::class);
+                // getting the partner by its identifier
+                $user = $userModel->find($id);
+
+                //TODO:Preguntar a Jorda com comparar contrassenyes ja codificades.
+
+/*                $contrassenya = $user->getPassword();
+                if($contrassenya == $pass){*/
+                    $user->setPassword($pass2);
+
+
+                    // updating changes
+                    $userModel->update($user);
+
+/*                }else{
+                    $errors[] = "La contrassenya vella no es correcta";
+                }*/
+
+
+            } catch (Exception $e) {
+                $errors[] = 'Error: ' . $e->getMessage();
+            }
+        }
+        return $this->response->renderView("password-validate","default",compact( 'errors'));
+
+
+
+    }
+
 
 
 
