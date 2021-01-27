@@ -19,25 +19,8 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e2882fb9-50f7-419a-8a93-29abca5336c9" name="Default Changelist" comment="Retocs en index">
-      <change afterPath="$PROJECT_DIR$/views/categoria-delete.view.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/views/categories-create.view.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/views/categories-store.view.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/views/categories/form-create.view.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/views/categories/form-delete.view.php" afterDir="false" />
+    <list default="true" id="e2882fb9-50f7-419a-8a93-29abca5336c9" name="Default Changelist" comment="Categories en proces">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/config.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/config.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/routes.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/routes.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controllers/AuthController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/AuthController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controllers/CategoriaController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/CategoriaController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controllers/ProducteController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/ProducteController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Categoria.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Categoria.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Producte.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Producte.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/auth/login.view.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/auth/login.view.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/categories.view.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/categories.view.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/productes-store.view.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/productes-store.view.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/productes/form-create.view.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/productes/form-create.view.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/productes/form-edit.view.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/productes/form-edit.view.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -156,7 +139,14 @@
       <option name="project" value="LOCAL" />
       <updated>1611602885413</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Categories en proces">
+      <created>1611740748393</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1611740748394</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -180,6 +170,7 @@
     <MESSAGE value="Usuaris, modificar i borrar productes" />
     <MESSAGE value="Implementacio del mail els usuaris, barra de administrador, quan borres usuaris, borres tambe els seus productes associats. Implementacio del nom dels anunciants als productes" />
     <MESSAGE value="Retocs en index" />
-    <option name="LAST_COMMIT_MESSAGE" value="Retocs en index" />
+    <MESSAGE value="Categories en proces" />
+    <option name="LAST_COMMIT_MESSAGE" value="Categories en proces" />
   </component>
 </project>
