@@ -17,6 +17,7 @@ return [
 
     "security" => ["roles" =>
         [
+            "ROLE_SUPERADMIN"=>4,
             "ROLE_ADMIN" => 3,
             "ROLE_USER" => 2,
             "ROLE_ANONYMOUS" => 1

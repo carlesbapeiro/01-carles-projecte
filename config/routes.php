@@ -2,7 +2,8 @@
 
 /* Default routes */
 $router->get("", "DefaultController", "index");
-$router->get("contact", "DefaultController", "contact");
+$router->post("", "DefaultController", "filter", [],"default_filter");
+/*$router->get("contact", "DefaultController", "contact");*/
 $router->get("api/demo", "DefaultController", "demo");
 
 /* Productes route*/
@@ -13,6 +14,11 @@ $router->post("productes", "ProducteController", "filter", [],"productes_filter"
 
 $router->get("productes/create", "ProducteController", "create",[],"","ROLE_USER");
 $router->post("productes/create", "ProducteController", "store",[],"","ROLE_USER");
+
+//Tots els usuaris poden vore la pagina del producte
+
+//TODO:IDEA: MOSTRAR EN LA PAGINA SHOW PRODUCTES QUE TINGUEN LA MATEIXA CATEGORIA BAIX
+$router->get("productes/:id/show","ProducteController","show",["id"=>"number"],"");
 
 $router->get("productes/:id/delete", "ProducteController", "delete",["id"=>"number"], "productes_delete","ROLE_USER");
 $router->post("productes/delete", "ProducteController", "destroy", [],"productes_destroy","ROLE_USER");
@@ -59,8 +65,11 @@ $router->get("categories", "CategoriaController", "index",[],"","ROLE_ADMIN");
 $router->get("categories/create", "CategoriaController", "create",[],"","ROLE_ADMIN");
 $router->post("categories/create", "CategoriaController", "store",[],"","ROLE_ADMIN");
 
-$router->get("categories/delete", "CategoriaController", "delete",[],"","ROLE_ADMIN");
+$router->get("categories/:id/delete", "CategoriaController", "delete",["id"=>"number"],"categories_delete","ROLE_ADMIN");
 $router->post("categories/destroy", "CategoriaController", "destroy",[],"categories_destroy","ROLE_ADMIN");
+
+$router->get("categories/:id/edit", "CategoriaController", "edit", ["id"=>"number"], "categories_edit");
+$router->post("categories/:id/edit", "CategoriaController", "update", ["id"=>"number"], "categories_update");
 
 
 

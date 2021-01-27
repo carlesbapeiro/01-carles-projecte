@@ -6,7 +6,9 @@ namespace App\Controllers;
 
 use App\Core\App;
 use App\Core\Controller;
+use App\Core\Exception\NotFoundException;
 use App\Model\UserModel;
+use Exception;
 
 class AuthController extends Controller
 {
@@ -27,20 +29,30 @@ class AuthController extends Controller
             $userModel = new userModel(App::get("DB"));
             //ar_dump($userModel);
 
-            $user = $userModel->findOneBy(['username' => $username]);
 
-            if(App::get("security")->checkPassword($password, $user->getPassword()) === true){
 
-                $_SESSION["loggedUser"] = $user->getId();
-                $_SESSION["role"] = $user->getRole();
-                App::get("router")->redirect("productes");
-            }else{
+            //TODO: ARREGLAR EL LOGIN, PREGUNTAR JORDA
+            try {
+                $user = $userModel->findOneBy(['username' => $username]);
+                if(App::get("security")->checkPassword($password, $user->getPassword()) === true){
 
-                App::get('flash')->set("message", "Contrassenya o usuari incorrecte");
+                    $_SESSION["loggedUser"] = $user->getId();
+                    $_SESSION["role"] = $user->getRole();
+                    App::get("router")->redirect("productes");
+                }else{
+
+                    App::get('flash')->set("message", "Contrassenya o usuari incorrecte");
+                }
+
+            }catch (Exception $e){
+
+                App::get('flash')->set("message", "Ha ocorregut un error inesperat, perfavor revisa les teues dades");
+
             }
 
+
         }
-        App::get('flash')->set("message", "No s'ha pogut iniciar sessió");
+        App::get('flash')->set("message", "Contrassenya o usuari incorrecte");
         App::get('router')->redirect("login");
     }
 

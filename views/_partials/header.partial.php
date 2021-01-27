@@ -88,23 +88,23 @@
         <?php
         $rol = $_SESSION["role"]??"";
 
-        if($rol == "ROLE_ADMIN"){
+        if($rol == "ROLE_ADMIN" || $rol == "ROLE_SUPERADMIN"){
 
             ?>
 
                     <div class="col-3"></div>
-                    <div class="col-2" id="header-col2">
+                    <div class="col-2 text-center" id="header-col2">
 
-                        <a href="/users">Gestio Usuaris</a>
+                        <a href="/users">Usuaris</a>
 
                     </div>
-                    <div class="col-2" id="header-col2">
+                    <div class="col-2 text-center" id="header-col2">
 
-                        <a href="/categories">Gestio Categories</a>
+                        <a href="/categories">Categories</a>
                     </div>
-            <div class="col-2" id="header-col2">
+            <div class="col-2 text-center" id="header-col2">
 
-                <a href="/productes">Gestio Productes</a>
+                <a href="/productes">Productes</a>
             </div>
 
             <div class="col-3"></div>

@@ -9,6 +9,7 @@ use App\Core\Controller;
 use App\Core\Exception\NotFoundException;
 use App\Core\Router;
 use App\Core\Security;
+use App\Database;
 use App\Entity\Categoria;
 use App\Model\categoriaModel;
 use App\Utils\UploadedFile;
@@ -138,12 +139,57 @@ class CategoriaController extends Controller
         else
             App::get(Router::class)->redirect('categories');
 
-        if (empty($errors))
+/*        if (empty($errors))
             App::get(Router::class)->redirect('categories');
-        else
+        else*/
             return $this->response->renderView("categories-destroy", "default",
                 compact("errors", "categoria"));
     }
+
+    public function edit(int $id): string
+    {
+        $title = "Editar Categories - Agrow";
+
+        $categoriaModel = App::getModel(categoriaModel::class);
+        $categoria = $categoriaModel->find($id);
+
+        $router = App::get(Router::class);
+
+        return $this->response->renderView("categories-edit", "default", compact('title',
+            'categoria', 'router'));
+
+    }
+
+    public function update(int $id): string
+    {
+        $errors = [];
+
+        $id = filter_input(INPUT_POST, "id", FILTER_VALIDATE_INT);
+        if (empty($id)) {
+            $errors[] = "Wrong ID";
+        }
+
+        $nom = filter_input(INPUT_POST, "nom", FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+        if (empty($nom)) {
+            $errors[] = "The name is mandatory";
+        }
+
+        if (empty($errors)) {
+            try {
+                $categoriaModel = App::getModel(categoriaModel::class);
+
+
+                $categoria = $categoriaModel->find($id);
+                $categoria->setNom($nom);
+
+                $categoriaModel->update($categoria);
+            } catch (Exception $e) {
+                $errors[] = 'Error: ' . $e->getMessage();
+            }
+        }
+        return $this->response->renderView("categories-update");
+    }
+
 
 
 

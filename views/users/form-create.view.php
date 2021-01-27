@@ -1,7 +1,7 @@
 <form action="" method="post" enctype="multipart/form-data" novalidate>
     <div class="form-group">
         <label for="name">Name:</label>
-        <input id="name" class="form-control" type="text" name="name" required>
+        <input id="name" class="form-control" type="text" name="name" maxlength="10" required>
     </div>
     <div class="form-group">
         <label for="mail">Mail:</label>
@@ -19,7 +19,7 @@
     <?php
     $rol = $_SESSION["role"]??"";
 
-    if($rol == "ROLE_ADMIN"){
+    if($rol == "ROLE_ADMIN"|| $rol == "ROLE_SUPERADMIN"){
 
         ?>
 
@@ -28,9 +28,18 @@
 
             <select class="form-control" name="role" id="role">
 
-                <option value="ROLE_ADMIN">Admin</option>
-                <option value="ROLE_USER">User</option>
+                <?php
 
+                //Nomes els superadmin poden crear admins
+                if($rol == "ROLE_SUPERADMIN"){
+
+                ?>
+                <option value="ROLE_ADMIN">Admin</option>
+
+                    <?php
+
+                } ?>
+                <option value="ROLE_USER">User</option>
             </select>
         </div>
 

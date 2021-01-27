@@ -57,10 +57,7 @@
 
         <tr>
             <th>Nom</th>
-            <th>id <a href="/movies?order=title&&tipo=ASC""><i
-                    class="fa fa-arrow-down"></i></a>
-                <a href="/movies?order=title&&tipo=DESC"><i
-                        class="fa fa-arrow-up"></i></a></th>
+            <th>id</th>
         </tr>
 
         <!--      <?php
@@ -81,10 +78,10 @@
                 <td><?= $categoria->getId() ?></td>
 
 
-                <td style="width: 140px"><a href="/productes/<?= $categoria->getId() ?>/edit">
+                <td style="width: 140px"><a href="/categories/<?= $categoria->getId() ?>/edit">
                         <button type="button" class="btn btn-primary"><i class="fa fa-edit"></i></button>
                     </a>
-                    <a href="<?=$router->getUrl("productes_delete", ["id"=>$categoria->getId()]) ?>">
+                    <a href="<?=$router->getUrl("categories_delete", ["id"=>$categoria->getId()]) ?>">
                         <button type="button" class="btn btn-warning"><i class="fa fa-trash"></i></button>
                     </a>
                 </td>

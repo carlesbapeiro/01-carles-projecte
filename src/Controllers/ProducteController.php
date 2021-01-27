@@ -28,17 +28,22 @@ class ProducteController extends Controller
 
 
             $producteModel = App::getModel(producteModel::class);
+            $categoriaModel = App::getModel(categoriaModel::class);
+            $categories = $categoriaModel->findAll();
 
-            //var_dump($productes);
+
             //Codi per a traure el usuari (part de traure els productes per usuari)
             //Depenent del rol es mostraran tots o no, el administrador els veura tots
-            if($_SESSION["role"] == "ROLE_ADMIN"){
+
+            if($_SESSION["role"] == "ROLE_ADMIN" || $_SESSION["role"] == "ROLE_SUPERADMIN"){
+
                 $productes = $producteModel->findAll(["nom" => "ASC"]);
 
             }else{
-
+                //Usuari conectat
                 $user = App::get("user");
                 $id = $user->getId();
+
                 $productes = $producteModel->findBy(["usuari_id"=>$id]);
             }
             //var_dump($_SESSION["role"]);
@@ -64,7 +69,7 @@ class ProducteController extends Controller
 
         $router = App::get(Router::class);
 
-        return $this->response->renderView("productes", "default", compact('title', 'productes', 'router','messageUser'));
+        return $this->response->renderView("productes", "default", compact('title', 'productes', 'router','messageUser','categories'));
 
     }
 
@@ -80,6 +85,8 @@ class ProducteController extends Controller
     public function store(): string
     {
 
+        $categoriaModel = new CategoriaModel(App::get("DB"));
+        $categories = $categoriaModel->findAll(["nom" => "ASC"]);
 
         $errors = [];
         $title = "Nou Producte";
@@ -94,8 +101,13 @@ class ProducteController extends Controller
         }
         $preu = filter_input(INPUT_POST, "preu");
         if (empty($preu)) {
-            $errors[] = "No pots deixar el preu buit";
+            $errors[] = "No pots deixar el producte sense preu";
         }
+        if ($preu>1000) {
+            $errors[] = "Els productes no poden superar els 1000 euros";
+        }
+
+
         $categoria_id = filter_input(INPUT_POST, "categoria");
 
         //App get user i agafar la id
@@ -105,6 +117,7 @@ class ProducteController extends Controller
         if (empty($errors)) {
             try {
                 $uploadedFile = new UploadedFile("poster", 2000 * 1024, ["image/jpeg", "image/jpg"]);
+
                 if ($uploadedFile->validate()) {
                     $uploadedFile->save(Producte::POSTER_PATH, uniqid("MOV"));
                     $filename = $uploadedFile->getFileName();
@@ -138,7 +151,7 @@ class ProducteController extends Controller
                 $errors[] = 'Error: ' . $e->getMessage();
             }
         }
-        return $this->response->renderView("productes-store", "default", compact('errors', 'title'));
+        return $this->response->renderView("productes-store", "default", compact('errors', 'title','categories'));
     }
 
     public function delete(int $id): string
@@ -202,11 +215,15 @@ class ProducteController extends Controller
     public function filter(): string
     {
         // S'executa amb el POST
+        $categoriaModel = App::getModel(categoriaModel::class);
+        $categories = $categoriaModel->findAll();
         $router = App::get(Router::class);
         $title = "Productes - Agrow";
         $errors = [];
         $user =App::get("user");
         $id = $user->getId();
+
+
 
         //Codi brosa
         $userModel = App::getModel(userModel::class);
@@ -222,38 +239,85 @@ class ProducteController extends Controller
 
             //$productes = $producteModel->findBy(["usuari_id"=>$_SESSION["loggedUser"]]);
 
-        if (!empty($text)) {
+
+        if (!empty($text) || $tipo_busqueda == "cat") {
+
+
             $pdo = App::get("DB");
             $producteModel = new producteModel($pdo);
-            if ($tipo_busqueda == "both") {
-                $productes = $producteModel->executeQuery("SELECT * FROM producte WHERE descripcio LIKE :text OR nom LIKE :text AND usuari_id LIKE :id",
-                    ["text" => "%$text%",
-                     "id"=>"%$id%"  ]);
 
-            }
-            if ($tipo_busqueda == "nom") {
-                $productes = $producteModel->executeQuery("SELECT * FROM producte WHERE nom LIKE :text AND usuari_id LIKE :id",
-                    ["text" => "%$text%",
-                     "id"=>"%$id%"]);
 
-            }
-            if ($tipo_busqueda == "descripcio") {
-                $productes = $producteModel->executeQuery("SELECT * FROM producte WHERE descripcio LIKE :text AND usuari_id LIKE :id",
-                    ["text" => "%$text%",
-                        "id"=>"%$id%"]);
+            //TODO:OPTIMITZAR CODI DE FILTRE
+            //TODO: ORDENAR POR FECHA
+            //En el cas de que siga administrador ha de ser un query diferent
+            if($_SESSION["role"] == "ROLE_ADMIN" || $_SESSION["role"] == "ROLE_SUPERADMIN"){
+
+                if ($tipo_busqueda == "nom") {
+                    $productes = $producteModel->executeQuery("SELECT * FROM producte WHERE nom LIKE :text",
+                        ["text" => "%$text%"]);
+
+                }
+                if ($tipo_busqueda == "descripcio") {
+                    $productes = $producteModel->executeQuery("SELECT * FROM producte WHERE descripcio LIKE :text",
+                        ["text" => "%$text%"]);
+
+                }
+                if ($tipo_busqueda == "cat") {
+                    $tipusCategoria = filter_input(INPUT_POST, "catsel", FILTER_SANITIZE_STRING);
+                    $productes = $producteModel->executeQuery("SELECT * FROM producte WHERE categoria_id LIKE :tipusCategoria",
+                        ["tipusCategoria" => "%$tipusCategoria%"]);
+
+                }
+
+            }else{
+
+                if ($tipo_busqueda == "nom") {
+                    $productes = $producteModel->executeQuery("SELECT * FROM producte WHERE nom LIKE :text AND usuari_id LIKE :id",
+                        ["text" => "%$text%",
+                            "id"=>"%$id%"]);
+
+                }
+                if ($tipo_busqueda == "descripcio") {
+                    $productes = $producteModel->executeQuery("SELECT * FROM producte WHERE descripcio LIKE :text AND usuari_id LIKE :id",
+                        ["text" => "%$text%",
+                            "id"=>"%$id%"]);
+
+                }
+                if ($tipo_busqueda == "cat") {
+                    $tipusCategoria = filter_input(INPUT_POST, "catsel", FILTER_SANITIZE_STRING);
+                    $productes = $producteModel->executeQuery("SELECT * FROM producte WHERE categoria_id LIKE :tipusCategoria AND usuari_id LIKE :id",
+                        ["tipusCategoria" => "%$tipusCategoria%",
+                            "id"=>"%$id%"]);
+
+                }
+
 
             }
 
         } else {
+
             $pdo = App::get("DB");
             $producteModel = new producteModel($pdo);
-            $productes = $producteModel->executeQuery("SELECT * FROM producte WHERE usuari_id LIKE :id",[
-                        "id"=>"%$id%"]);
-            $errors[] = "Cal introduir una paraula de búsqueda";
+
+
+            if($_SESSION["role"]=="ROLE_ADMIN" || $_SESSION["role"] == "ROLE_SUPERADMIN"){
+
+                $productes = $producteModel->executeQuery("SELECT * FROM producte");
+
+            }else{
+
+                $productes = $producteModel->executeQuery("SELECT * FROM producte WHERE usuari_id LIKE :id",[
+                    "id"=>"%$id%"]);
+
+
+            }
+
+
+            $errors[] = "Cal introduir una paraula de búsqueda o marcar la categoria";
 
         }
         return $this->response->renderView("productes", "default", compact('title', 'productes',
-            'producteModel', 'errors',"router",'allUser'));
+            'producteModel', 'errors',"router",'categories'));
     }
 
 
@@ -346,6 +410,24 @@ class ProducteController extends Controller
 
         return $this->response->renderView("productes-edit", "default", compact("isGetMethod",
             "errors", "producte","categories"));
+    }
+
+    public function show($id){
+
+        $errors = [];
+
+        if (!empty($id)) {
+            try {
+                $producteModel = new producteModel(App::get("DB"));
+                $producte = $producteModel->find($id);
+
+            } catch (NotFoundException $notFoundException) {
+                $errors[] = $notFoundException->getMessage();
+            }
+        }
+        return $this->response->renderView("single-page", "default", compact(
+            "errors", "producte"));
+
     }
 
 

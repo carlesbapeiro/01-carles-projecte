@@ -1,3 +1,8 @@
+<?php
+
+use App\Core\App;
+
+?>
 <div class="container" >
     <div class="row">
 
@@ -7,8 +12,10 @@
             <a href="users/create" class="btn btn-info">Registra't!</a>
         </div>
         <div class="col-sm-6">
-            <?php //TODO: Gestionar el error de si no fiques res ?>
+
+            <?php //TODO: Gestionar el error de si fique dades erronees ?>
             <h3>Login</h3>
+            <p><?= $message = App::get("flash")::get("message")??""; ?></p>
             <form method="post" novalidate>
                 <div class="form-group">
                     <label for="username">Username</label>

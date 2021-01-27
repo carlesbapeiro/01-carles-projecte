@@ -1,11 +1,11 @@
 <form action="" method="post" enctype="multipart/form-data" novalidate>
     <div class="form-group">
         <label for="nom">Nom:</label>
-        <input id="nom" class="form-control" type="text" name="nom" required>
+        <input id="nom" class="form-control" type="text" name="nom" maxlength="10" required>
     </div>
     <div class="form-group">
         <label for="descripcio">Descripcio:</label>
-        <textarea id="descripcio" name="descripcio" class="form-control rounded-0" rows="3"></textarea>
+        <textarea id="descripcio" name="descripcio" class="form-control rounded-0" maxlength="20" rows="3"></textarea>
     </div>
     <div class="form-group">
         <label for="preu">Preu:</label>

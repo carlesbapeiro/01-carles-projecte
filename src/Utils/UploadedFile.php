@@ -60,12 +60,22 @@ class UploadedFile
      */
     public function __construct(string $inputName, int $maxSize = 0, array $acceptedTypes = array())
     {
-        $this->file = $_FILES[$inputName];
-        if (empty($this->file))
-            throw new UploadedFileException("Upload file not found");;
 
-        if ($this->file["error"] === UPLOAD_ERR_NO_FILE)
+        $this->file = $_FILES[$inputName];
+
+        if (empty($this->file)){//TODO: POSAR UNA IMATGE PER DEFECTE
+
+            //$this->file = "/images/productes/1.jpg";
+            throw new UploadedFileException("Upload file not found");
+
+        }
+
+
+        if ($this->file["error"] === UPLOAD_ERR_NO_FILE){
+            //$this->file = "/images/productes/1.jpg";
             throw new UploadedFileNoFileException("No file uploaded");
+        }
+
 
 
         $this->fileName = $this->file["name"];

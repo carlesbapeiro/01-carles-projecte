@@ -8,7 +8,6 @@ use App\Core\Entity;
 
 class User implements Entity
 {
-    //TODO:FICAR UNA IMATGE DE PERFIL
 
     const FOTO_PATH = 'images/fotos/';
     private ?int $id = null;

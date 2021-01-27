@@ -3,6 +3,60 @@
     <hr  style="height:1px;border:none;color:#333;background-color:#333;">
     <div class="row">
 
+        <form method="post" action="<?php
+
+        $_SERVER["PHP_SELF"] ?>"
+              class="form-inline  justify-content-center my-4">
+
+            <div class="form-group">
+                <input name="text" class="form-control mr-sm-4"
+                       value="<?= ($_POST["text"]) ?? "" ?>"
+                       type="text" placeholder="Search" aria-label="Search">
+            </div>
+            <div class="form-check-inline">
+                <label class="form-check-label">
+                    <input class="form-check-input" type="radio" name="optradio" id="nom" value="nom" checked>&nbsp;Nom                       &nbsp;
+                </label>
+            </div>
+
+            <div class="form-check-inline">
+                <label class="form-check-inline">
+                    <input class="form-check-input" type="radio" name="optradio" id="descripcio" value="descripcio">&nbsp;Descripcio                       &nbsp;
+                </label></div>
+
+            <div class="form-check-inline">
+
+
+                <label class="form-check-inline">
+                    <input class="form-check-input" type="radio" name="optradio" id="cat" value="cat">&nbsp;Categoria:                         &nbsp;
+                </label>
+                <select name="catsel" id="catsel">
+                    <!--<option value="1" selected>Categories</option>-->
+                    <?php foreach ($categories as $categoria){
+                        ?>
+
+                        <option value="<?=$categoria->getId() ?>"> <?= $categoria->getNom() ?></option>
+                        <?php
+
+                    }
+                    ?>
+
+                </select>
+
+            </div>
+            <div class="form-group">
+                <button class="form-control btn btn-secondary my-2 my-sm-0" type="submit" name="botonFiltrar">Search</button>
+            </div>
+        </form>
+        <p class="text-center text-light bg-dark"><?php
+            if(!empty($errors)){
+                foreach ($errors as $error){
+                    echo $error;
+                }
+
+            }?>
+        </p>
+
         <?php use App\Entity\Producte;
 
         foreach ($productes as $producte): ?>
@@ -12,12 +66,12 @@
 
                     <a href=""><?= generar_imagen_local(Producte::POSTER_PATH.'/', $producte->getPoster(),$producte->getNom() ,"card-img-top", 200) ?></a>
                     <div class="card-body">
-                        <h4 class="card-title">
-                            <a href="<?php ?>"><?= $producte->getNom() ?></a>
+                        <h4 class="card-title text-center">
+                            <a class=" text-uppercase" href="<?php ?>"><?= $producte->getNom() ?></a>
                         </h4>
-                        <p class="card-text"><em><?= $producte->getPreu() ?></em></p>
+
                         <hr  style="height:1px;border:none;color:#333;background-color:#333;">
-                        <p class="card-text text-muted"><?= $producte->getDescripcio() ?></p>
+                        <p class="text-muted"><?= $producte->getDescripcio() ?></p>
                         <?php
                         //Revisar per gestionar
 
@@ -37,15 +91,18 @@
 
 
                         }*/
-
+                        //TODO:MOSTRAR EL NOM DEL VENEDOR NO NOMES EL ID
                         ?>
 
-                        <p class="card-text text-muted">Venedor: <?= $producte->getUsuariId() ?></p>
+                        <p class="">Venedor: <?= $producte->getUsuariId() ?> <em>. Preu: <?= $producte->getPreu() ?></em></p>
+
 
 
                     </div>
+                    <a href="/productes/<?=$producte->getId() ?>/show" class="btn btn-info">Veure mes informacio</a>
 
                 </div>
+
             </div>
         <?php endforeach; ?>
 

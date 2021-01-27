@@ -19,17 +19,34 @@
             </div>
             <div class="form-check-inline">
                 <label class="form-check-label">
-                    <input class="form-check-input" type="radio" name="optradio" id="nom" value="nom">&nbsp;Nom                       &nbsp;
+                    <input class="form-check-input" type="radio" name="optradio" id="nom" value="nom" checked>&nbsp;Nom                       &nbsp;
                 </label>
             </div>
+
             <div class="form-check-inline">
                 <label class="form-check-inline">
                     <input class="form-check-input" type="radio" name="optradio" id="descripcio" value="descripcio">&nbsp;Descripcio                       &nbsp;
                 </label></div>
+
             <div class="form-check-inline">
+
+
                 <label class="form-check-inline">
-                    <input class="form-check-input" type="radio" name="optradio" id="both" value="both" checked>&nbsp;both                        &nbsp;
+                    <input class="form-check-input" type="radio" name="optradio" id="cat" value="cat">&nbsp;Categoria:                         &nbsp;
                 </label>
+                <select name="catsel" id="catsel">
+                    <!--<option value="1" selected>Categories</option>-->
+                    <?php foreach ($categories as $categoria){
+                        ?>
+
+                        <option value="<?=$categoria->getId() ?>"> <?= $categoria->getNom() ?></option>
+                    <?php
+
+                    }
+                    ?>
+
+                </select>
+
             </div>
             <div class="form-group">
                 <button class="form-control btn btn-secondary my-2 my-sm-0" type="submit" name="botonFiltrar">Search</button>
@@ -55,13 +72,11 @@
 
         <tr>
             <th>Poster</th>
-            <th>Nom <a href="/movies?order=title&&tipo=ASC""><i
-                        class="fa fa-arrow-down"></i></a>
-                <a href="/movies?order=title&&tipo=DESC"><i
-                            class="fa fa-arrow-up"></i></a></th>
+            <th>Nom</th>
             <th>Descripcio</th>
             <th>Preu</th>
             <th>Anunciant</th>
+            <th>Categoria</th>
             <th>Actions</th>
         </tr>
 
@@ -84,29 +99,11 @@
                 <td><?= $producte->getDescripcio() ?></td>
                 <td><?= $producte->getPreu() ?></td>
 
-                <?php
-                //Revisar per gestionar
 
 
-   /*             foreach ($allUser as $usuaris){
-                    $id = $usuaris ->getId();
-                    $usuari_id = $producte->getUsuariId();
-                    if($usuari_id == $id) {
-
-                        $nom = $usuaris->getUsername();
-
-                        //break per a ixir del bucle
-                        break;
-                    }else{
-
-                        $nom = "undefined";
-                    }
-
-
-                }*/
-
-                ?>
                 <td><?= $producte->getUsuariId() ?></td>
+                <td><?=$producte->getCategoriaId() ?></td>
+
 
                 <td style="width: 140px"><a href="/productes/<?= $producte->getId() ?>/edit">
                         <button type="button" class="btn btn-primary"><i class="fa fa-edit"></i></button>

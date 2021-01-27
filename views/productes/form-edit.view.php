@@ -3,11 +3,11 @@
     <input type="hidden" name="usuari_id" value="<?= $producte->getUsuariId() ?>">
     <div class="form-group">
         <label for="nom">Nom:</label>
-        <input id="nom" class="form-control" type="text" name="nom" value="<?= $producte->getNom() ?>" required>
+        <input id="nom" class="form-control" type="text" name="nom" value="<?= $producte->getNom() ?>" maxlength="10" required>
     </div>
     <div class="form-group">
         <label for="descripcio">Descripcio:</label>
-        <textarea id="descripcio" name="descripcio" class="form-control rounded-0" rows="2" ><?=$producte->getDescripcio()?></textarea>
+        <textarea id="descripcio" name="descripcio" class="form-control rounded-0" rows="2" maxlength="20"><?=$producte->getDescripcio()?></textarea>
     </div>
 
     <div class="form-group">
