@@ -13,6 +13,7 @@ class Producte implements Entity
     private string $valoracio;
     private string $poster;
     private int $usuari_id;
+    private int $categoria_id;
 
     /**
      * @return string
@@ -129,6 +130,22 @@ class Producte implements Entity
         $this->usuari_id = $usuari_id;
     }
 
+    /**
+     * @return int
+     */
+    public function getCategoriaId(): int
+    {
+        return $this->categoria_id;
+    }
+
+    /**
+     * @param int $categoria_id
+     */
+    public function setCategoriaId(int $categoria_id): void
+    {
+        $this->categoria_id = $categoria_id;
+    }
+
 
 
 
@@ -141,7 +158,8 @@ class Producte implements Entity
             "preu" =>$this->getPreu(),
             "poster" =>$this->getPoster(),
             "valoracio" => 0,
-            "usuari_id"=>$this->getUsuariId()
+            "usuari_id"=>$this->getUsuariId(),
+            "categoria_id"=>$this->getCategoriaId()
         ];
     }
 }

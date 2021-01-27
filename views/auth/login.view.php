@@ -7,7 +7,7 @@
             <a href="users/create" class="btn btn-info">Registra't!</a>
         </div>
         <div class="col-sm-6">
-
+            <?php //TODO: Gestionar el error de si no fiques res ?>
             <h3>Login</h3>
             <form method="post" novalidate>
                 <div class="form-group">

@@ -12,6 +12,7 @@ use App\Core\Security;
 use App\Entity\Producte;
 use App\Exception\UploadedFileException;
 use App\Exception\UploadedFileNoFileException;
+use App\Model\categoriaModel;
 use App\Model\producteModel;
 use App\Model\UserModel;
 use App\Utils\UploadedFile;
@@ -69,10 +70,12 @@ class ProducteController extends Controller
 
     public function create(): string
     {
+        $categoriaModel = new CategoriaModel(App::get("DB"));
+        $categories = $categoriaModel->findAll(["nom" => "ASC"]);
 
 
         $title = "Nou producte - Agrow";
-        return $this->response->renderView("productes-create", "default", compact('title'));
+        return $this->response->renderView("productes-create", "default", compact('title','categories'));
     }
     public function store(): string
     {
@@ -93,6 +96,10 @@ class ProducteController extends Controller
         if (empty($preu)) {
             $errors[] = "No pots deixar el preu buit";
         }
+        $categoria_id = filter_input(INPUT_POST, "categoria");
+
+        //App get user i agafar la id
+        //TODO: UTILITZAR EL APP GET USER I FICAR LA ID DES DE AHI
         $usuari_id = $_SESSION["loggedUser"];
 
         if (empty($errors)) {
@@ -116,6 +123,7 @@ class ProducteController extends Controller
                 $producte->setPreu($preu);
                 $producte->setPoster($filename);
                 $producte->setUsuariId($usuari_id);
+                $producte->setCategoriaId($categoria_id);
 
 
                 $producteModel = App::getModel(producteModel::class);
@@ -252,10 +260,15 @@ class ProducteController extends Controller
     public function edit(int $id)
     {
 
+        //TODO:Arreglar edit com en partners de movieFX
+
 
         $isGetMethod = true;
         $errors = [];
         $producteModel = new producteModel(App::get("DB"));
+
+        $categoriaModel = new categoriaModel(App::get("DB"));
+        $categories = $categoriaModel->findAll(["nom" => "ASC"]);
 
         if (empty($id)) {
             $errors[] = '404 Not Found';
@@ -283,6 +296,8 @@ class ProducteController extends Controller
 
             $preu = filter_input(INPUT_POST, "preu", FILTER_VALIDATE_INT);
             $usuari_id = filter_input(INPUT_POST, "usuari_id", FILTER_VALIDATE_INT);
+            $categoria_id = filter_input(INPUT_POST, "categoria", FILTER_VALIDATE_INT);
+
 
 
             /*$releaseDate = DateTime::createFromFormat("Y-m-d", $_POST["release_date"]);*/
@@ -319,6 +334,7 @@ class ProducteController extends Controller
                     $producte->setPreu($preu);
                     $producte->setPoster($poster);
                     $producte->setUsuariId($usuari_id);
+                    $producte->setCategoriaId($categoria_id);
 
                     $producteModel->update($producte);
 
@@ -329,7 +345,7 @@ class ProducteController extends Controller
         }
 
         return $this->response->renderView("productes-edit", "default", compact("isGetMethod",
-            "errors", "producte"));
+            "errors", "producte","categories"));
     }
 
 

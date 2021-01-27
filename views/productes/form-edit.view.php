@@ -15,6 +15,22 @@
         <input id="preu" class="form-control" type="number" name="preu" value="<?=$producte->getPreu()?>" required>
     </div>
     <div class="form-group">
+        <p>Categoria:</p>
+        <select name="categoria" id="categoria">
+
+            <?php
+            foreach ($categories as $categoria){
+
+                ?>
+                <option value="<?=$categoria->getId() ?>"><?= $categoria->getNom() ?></option>
+                <?php
+            }
+            ?>
+
+
+        </select>
+    </div>
+    <div class="form-group">
         <label for="poster">Poster:</label>
         <input type="hidden" name="poster" value="<?= $producte->getPoster() ?>">
         <input id="poster" class="form-control" type="file" name="poster" value="<?= $producte->getPoster() ?>" required>

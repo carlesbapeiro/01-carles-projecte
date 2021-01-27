@@ -4,7 +4,7 @@
 return [
     "database" =>
         [
-            "connection" => "mysql:host=localhost;dbname=tenda;charset=utf8",
+            "connection" => "mysql:host=localhost;dbname=01-carles;charset=utf8",
             "username" => "dbuser",
             "password" => "1234",
             "options" => [PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,

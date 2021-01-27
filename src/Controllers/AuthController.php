@@ -34,6 +34,9 @@ class AuthController extends Controller
                 $_SESSION["loggedUser"] = $user->getId();
                 $_SESSION["role"] = $user->getRole();
                 App::get("router")->redirect("productes");
+            }else{
+
+                App::get('flash')->set("message", "Contrassenya o usuari incorrecte");
             }
 
         }

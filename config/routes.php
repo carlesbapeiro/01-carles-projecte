@@ -56,6 +56,13 @@ $router->post("users/:id/validate", "UserController", "validate",
 
 $router->get("categories", "CategoriaController", "index",[],"","ROLE_ADMIN");
 
+$router->get("categories/create", "CategoriaController", "create",[],"","ROLE_ADMIN");
+$router->post("categories/create", "CategoriaController", "store",[],"","ROLE_ADMIN");
+
+$router->get("categories/delete", "CategoriaController", "delete",[],"","ROLE_ADMIN");
+$router->post("categories/destroy", "CategoriaController", "destroy",[],"categories_destroy","ROLE_ADMIN");
+
+
 
 
 

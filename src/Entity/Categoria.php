@@ -8,24 +8,26 @@ use App\Core\Entity;
 
 class Categoria implements Entity
 {
-    private int $id;
+    private ?int $id = null;
     private string $nom;
 
     /**
-     * @return int
+     * @return int|null
      */
-    public function getId(): int
+    public function getId(): ?int
     {
         return $this->id;
     }
 
     /**
-     * @param int $id
+     * @param int|null $id
      */
-    public function setId(int $id): void
+    public function setId(?int $id): void
     {
         $this->id = $id;
     }
+
+
 
     /**
      * @return string
