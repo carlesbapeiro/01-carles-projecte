@@ -18,14 +18,14 @@ use App\Core\App;
             <p><?= $message = App::get("flash")::get("message")??""; ?></p>
             <form method="post" novalidate>
                 <div class="form-group">
-                    <label for="username">Username</label>
+                    <label for="mail">Correu</label>
                     <input type="text" class="form-control"
-                           name="username" id="username"
+                           name="mail" id="mail"
                            value="<?= null ?? "" ?>"
-                           placeholder="Username" required>
+                           placeholder="mail" required>
                 </div>
                 <div class="form-group">
-                    <label for="password">Password</label>
+                    <label for="password">Contrassenya</label>
                     <input type="text" class="form-control"
                            name="password" id="password"
                            value="<?= null ?? "" ?>"

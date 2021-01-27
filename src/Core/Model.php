@@ -108,7 +108,7 @@ abstract class Model
     public function findOneBy(array $data = []): ?Entity
     {
 
-        //TODO: ERROR DEL LOGIN ACI
+
             $entities = $this->findBy($data);
             return $entities[0];
 

@@ -135,7 +135,7 @@
 <div class="container">
     <div class="row">
         <div class="col-12 registrar-container">
-            <a class="registrar-enllas" href="#">
+            <a class="registrar-enllas" href="/users/create">
                 REGISTRA'T!!
             </a>
         </div>

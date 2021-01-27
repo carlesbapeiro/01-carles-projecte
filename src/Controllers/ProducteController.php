@@ -247,7 +247,7 @@ class ProducteController extends Controller
             $producteModel = new producteModel($pdo);
 
 
-            //TODO:OPTIMITZAR CODI DE FILTRE
+
             //TODO: ORDENAR POR FECHA
             //En el cas de que siga administrador ha de ser un query diferent
             if($_SESSION["role"] == "ROLE_ADMIN" || $_SESSION["role"] == "ROLE_SUPERADMIN"){

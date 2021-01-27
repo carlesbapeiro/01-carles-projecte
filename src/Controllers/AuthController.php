@@ -21,10 +21,10 @@ class AuthController extends Controller
     public function checkLogin()
     {
         $messages = [];
-        $username = filter_input(INPUT_POST, 'username');
+        $mail = filter_input(INPUT_POST, 'mail');
         $password = filter_input(INPUT_POST, 'password');
 
-        if (!empty($username) && !empty($password)) {
+        if (!empty($mail) && !empty($password)) {
 
             $userModel = new userModel(App::get("DB"));
             //ar_dump($userModel);
@@ -33,7 +33,9 @@ class AuthController extends Controller
 
             //TODO: ARREGLAR EL LOGIN, PREGUNTAR JORDA
             try {
-                $user = $userModel->findOneBy(['username' => $username]);
+
+                $user = $userModel->findOneBy(['mail' => $mail]);
+                var_dump($user);
                 if(App::get("security")->checkPassword($password, $user->getPassword()) === true){
 
                     $_SESSION["loggedUser"] = $user->getId();

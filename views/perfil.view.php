@@ -22,12 +22,6 @@
                 <h4>Email: <em><?= $user->getMail() ?>.</em></h4>
                 <p>Id del usuari: <?= $user->getId() ?></p>
 
-<!--                --><?php
-/*                $rol = $_SESSION["role"]??"";
-
-                if($rol === "ROLE_ADMIN"){
-
-                */?>
                     <h4 class="border-dark my-4">Has oblidat la teua contrssenya? </h4>
                     <a  class="btn btn-danger text-center" href="/users/<?=$user->getId() ?>/check">Canvia la teua contrssenya</a>
                 <a  class="btn btn-warning text-center" href="/users/<?=$user->getId() ?>/edit">Modifica el teu perfil</a>
