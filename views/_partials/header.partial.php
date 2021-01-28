@@ -53,6 +53,18 @@
 
         } ?>
 
+        <?php
+        $rol = $_SESSION["role"]??"";
+
+        if($rol == "ROLE_USER" || $rol == "ROLE_ADMIN" || $rol == "ROLE_SUPERADMIN" ){
+
+            ?>
+            <div class="col-1" id="header-col">
+
+                <a href="/productes/cesta">Cistella</a>
+            </div>
+            <?php
+        }?>
 
 
 
@@ -82,6 +94,8 @@
             <?php
         } ?>
 
+
+
     </div>
     <div class="row menu-admin" style="background-color: rgb(248, 171, 55);">
 
@@ -108,13 +122,6 @@
             </div>
 
             <div class="col-3"></div>
-
-
-
-
-
-
-
 
 
             <?php

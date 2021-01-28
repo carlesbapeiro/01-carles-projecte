@@ -26,6 +26,9 @@ $router->post("productes/delete", "ProducteController", "destroy", [],"productes
 $router->get("productes/:id/edit", "ProducteController", "edit", ["id" => "number"], "productes_edit","ROLE_USER");
 $router->post("productes/:id/edit", "ProducteController", "edit", ["id" => "number"],"productes_edit","ROLE_USER");
 
+$router->get("productes/:id/cesta", "ProducteController", "cesta", ["id" => "number"],"productes_cesta","ROLE_USER");
+$router->get("productes/cesta", "ProducteController", "mostrarCesta", [],"productes_cesta_mostrar","ROLE_USER");
+
 $router->get("users/:id/show", "UserController", "show",
     ["id" => "number"], "users_show");
 

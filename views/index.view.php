@@ -64,7 +64,7 @@
             <div class="col-lg-3 col-md-6 mb-4">
                 <div class="card h-100">
 
-                    <a href=""><?= generar_imagen_local(Producte::POSTER_PATH.'/', $producte->getPoster(),$producte->getNom() ,"card-img-top", 200) ?></a>
+                    <a href="/productes/<?=$producte->getId() ?>/show"><?= generar_imagen_local(Producte::POSTER_PATH.'/', $producte->getPoster(),$producte->getNom() ,"card-img-top", 200) ?></a>
                     <div class="card-body">
                         <h4 class="card-title text-center">
                             <a class=" text-uppercase" href="<?php ?>"><?= $producte->getNom() ?></a>
@@ -99,8 +99,7 @@
 
 
                     </div>
-                    <a href="/productes/<?=$producte->getId() ?>/show" class="btn btn-info">Veure mes informacio</a>
-
+                    <a href="/productes/<?=$producte->getId() ?>/show" class="btn btn-info mx-1 my-1">Veure mes informacio</a>
                 </div>
 
             </div>

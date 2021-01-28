@@ -429,6 +429,68 @@ class ProducteController extends Controller
             "errors", "producte"));
 
     }
+    public function cesta($id){
+
+        $errors = [];
+        $cistella = $_SESSION["cesta"]??[];
+
+
+
+        $producteModel = new producteModel(App::get("DB"));
+        if(!empty($id)){
+
+            $producte = $producteModel->find($id);
+            $_SESSION["cesta"][] = $id;
+
+
+            App::get('flash')->set("message", "Producte afegit correctament");
+        }else{
+
+            $errors[] = "Producte no trobat";
+        }
+
+
+        //POSAR TAMBE UN FLAH MESSAGE
+        return $this->response->renderView("single-page", "default", compact(
+            "errors",'producte'));
+
+
+
+
+    }
+    public function mostrarCesta(){
+
+
+        $cistella = $_SESSION["cesta"]??"";
+
+        $cistellaProductes = [];
+
+        $producteModel = new producteModel(App::get("DB"));
+
+        if(empty($cistella)){
+
+            App::get('flash')->set("message", "No hi ha cap producte en la cistella");
+
+        }else{
+            foreach ($cistella as $id){
+
+
+                $producte = $producteModel->find($id);
+                $cistellaProductes[] = $producte;
+
+            }
+        }
+
+
+
+
+
+        return $this->response->renderView("cistella", "default", compact(
+            "cistellaProductes"));
+
+
+
+    }
 
 
 

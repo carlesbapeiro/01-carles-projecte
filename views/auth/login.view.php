@@ -26,7 +26,7 @@ use App\Core\App;
                 </div>
                 <div class="form-group">
                     <label for="password">Contrassenya</label>
-                    <input type="text" class="form-control"
+                    <input type="password" class="form-control"
                            name="password" id="password"
                            value="<?= null ?? "" ?>"
                            placeholder="Password" required>

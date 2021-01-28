@@ -35,8 +35,9 @@ class AuthController extends Controller
             try {
 
                 $user = $userModel->findOneBy(['mail' => $mail]);
+
                 var_dump($user);
-                if(App::get("security")->checkPassword($password, $user->getPassword()) === true){
+                if($user != null && App::get("security")->checkPassword($password, $user->getPassword()) === true){
 
                     $_SESSION["loggedUser"] = $user->getId();
                     $_SESSION["role"] = $user->getRole();
