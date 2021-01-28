@@ -13,16 +13,15 @@ use App\Core\App;
         </div>
         <div class="col-sm-6">
 
-            <?php //TODO: Gestionar el error de si fique dades erronees ?>
             <h3>Login</h3>
             <p><?= $message = App::get("flash")::get("message")??""; ?></p>
             <form method="post" novalidate>
                 <div class="form-group">
-                    <label for="mail">Correu</label>
+                    <label for="nom">Nom</label>
                     <input type="text" class="form-control"
-                           name="mail" id="mail"
+                           name="nom" id="nom"
                            value="<?= null ?? "" ?>"
-                           placeholder="mail" required>
+                           placeholder="nom" required>
                 </div>
                 <div class="form-group">
                     <label for="password">Contrassenya</label>

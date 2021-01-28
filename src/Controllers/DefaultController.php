@@ -15,6 +15,8 @@ use Exception;
 use PDOException;
 use App\Entity\Movie;
 
+//TODO: FER QUE LES IMATGES QUE PUTJE EN CASA ES VEGUEN EN CLASSE, PREGUNTAR JORDA
+
 class DefaultController extends Controller
 {
     public function index(): string
@@ -42,7 +44,7 @@ class DefaultController extends Controller
         return $this->response->renderView("index", "default", compact('title', 'productes', 'router','categories'));
     }
 
-    public function contact()
+/*    public function contact()
     {
 
 // 2. S'ha enviat el formulari
@@ -86,15 +88,14 @@ class DefaultController extends Controller
 
         }
         require 'views/contact.view.php';
-    }
+    }*/
 
     public function demo(): string
     {
 
-        $movieModel = App::getModel(MovieModel::class);
-        $movies = $movieModel->findAllPaginated(1, 8,
-            ["release_date" => "DESC", "title" => "ASC"]);
-        return $this->response->jsonResponse($movies);
+        $producteModel = App::getModel(producteModel::class);
+        $productes = $producteModel->findAllPaginated(1, 8);
+        return $this->response->jsonResponse($productes);
 
     }
 

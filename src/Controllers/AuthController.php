@@ -21,20 +21,16 @@ class AuthController extends Controller
     public function checkLogin()
     {
         $messages = [];
-        $mail = filter_input(INPUT_POST, 'mail');
+        $nom = filter_input(INPUT_POST, 'nom');
         $password = filter_input(INPUT_POST, 'password');
 
-        if (!empty($mail) && !empty($password)) {
+        if (!empty($nom) && !empty($password)) {
 
             $userModel = new userModel(App::get("DB"));
-            //ar_dump($userModel);
 
-
-
-            //TODO: ARREGLAR EL LOGIN, PREGUNTAR JORDA
             try {
 
-                $user = $userModel->findOneBy(['mail' => $mail]);
+                $user = $userModel->findOneBy(['username' => $nom]);
 
                 var_dump($user);
                 if($user != null && App::get("security")->checkPassword($password, $user->getPassword()) === true){
@@ -52,7 +48,6 @@ class AuthController extends Controller
                 App::get('flash')->set("message", "Ha ocorregut un error inesperat, perfavor revisa les teues dades");
 
             }
-
 
         }
         App::get('flash')->set("message", "Contrassenya o usuari incorrecte");
