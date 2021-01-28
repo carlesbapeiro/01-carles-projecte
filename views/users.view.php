@@ -4,15 +4,6 @@
             <form method="post" action="<?php use App\Entity\User;
 
             $_SERVER["PHP_SELF"] ?>"
-                  class="form-inline  justify-content-center my-4">
-
-
-
-                <div class="form-group">
-                    <input name="text" class="form-control mr-sm-4"
-                           value="<?= ($_POST["text"]) ?? "" ?>"
-                           type="text" placeholder="Search" aria-label="Search">
-                </div>
 
             </form>
 

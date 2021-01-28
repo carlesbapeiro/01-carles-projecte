@@ -418,21 +418,30 @@ class ProducteController extends Controller
 
         if (!empty($id)) {
             try {
+
                 $producteModel = new producteModel(App::get("DB"));
                 $producte = $producteModel->find($id);
+
+                $userModel =  App::getModel(UserModel::class);
+                $user_id = $producte->getUsuariId();
+                $user = $userModel->findOneBy(["id"=>$user_id]);
+
+
 
             } catch (NotFoundException $notFoundException) {
                 $errors[] = $notFoundException->getMessage();
             }
         }
         return $this->response->renderView("single-page", "default", compact(
-            "errors", "producte"));
+            "errors", "producte","user"));
 
     }
     public function cesta($id){
 
         $errors = [];
-        $cistella = $_SESSION["cesta"]??[];
+
+        $user = App::get("user");
+        $id_user = $user->getId();
 
 
 
@@ -440,19 +449,30 @@ class ProducteController extends Controller
         if(!empty($id)){
 
             $producte = $producteModel->find($id);
-            $_SESSION["cesta"][] = $id;
+            $userModel =  App::getModel(UserModel::class);
+            $user_id = $producte->getUsuariId();
+            $user = $userModel->findOneBy(["id"=>$user_id]);
+
+            if($producte->getUsuariId() == $id_user){
+
+                App::get('flash')->set("message", "No pots comprar els teus propis productes");
+            }else{
+
+                $_SESSION["cesta"][] = $id;
 
 
-            App::get('flash')->set("message", "Producte afegit correctament");
+                App::get('flash')->set("message", "Producte afegit correctament");
+            }
+
         }else{
 
-            $errors[] = "Producte no trobat";
+            $errors[] = "No s'ha trobat el producte";
         }
 
 
         //POSAR TAMBE UN FLAH MESSAGE
         return $this->response->renderView("single-page", "default", compact(
-            "errors",'producte'));
+            "errors",'producte','user'));
 
 
 

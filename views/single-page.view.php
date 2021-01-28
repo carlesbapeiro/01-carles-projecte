@@ -22,16 +22,23 @@
                 <div class=" bg-secondary text-white"><p>Breu descripcio del anunciant:</p></div>
                 <p><?=  $producte->getDescripcio() ?></p>
 
+ <!--               <?php
+/*                if(empty($user)){
 
+                    */?>
+                <?php
+/*                }else{
+                    */?>
 
+                --><?php
+/*
+                }
+                */?>
+                <h4>Venedor: <?= $user->getUsername() ?> <em> Preu: <?= $producte->getPreu() ?></em></h4>
 
-
-                <h4>Venedor: <?= $producte->getUsuariId() ?> <em>. Preu: <?= $producte->getPreu() ?></em></h4>
                 <div class=" mt-3 bg-info text-white text-center"><p><?= $message = App::get("flash")::get("message")??""; ?></p></div>
                 <a href="/" class="mx-1 my-1 btn btn-dark">Tornar enrere</a>
                 <a href="/productes/<?=$producte->getId() ?>/cesta" class="btn btn-danger mx-1 my-1">Comprar</a>
-
-
 
             </div>
 

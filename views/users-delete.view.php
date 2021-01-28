@@ -1,7 +1,7 @@
 <div class="container">
     <div class="row">
         <div class="col-8">
-            <h1>Delete user</h1>
+            <h1>Borrar usuaris</h1>
 
             <?php if (!empty($errors)) : ?>
                 <ul>

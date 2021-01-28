@@ -259,6 +259,9 @@ class UserController extends Controller
         $errors = [];
         if (!empty($id)) {
             try {
+
+                $producteModel = new producteModel(App::get("DB"));
+                $productes = $producteModel->findBy(["usuari_id"=>$id]);
                 $userModel = new UserModel(App::get("DB"));
                 $user = $userModel->find($id);
 
@@ -267,7 +270,7 @@ class UserController extends Controller
             }
         }
         return $this->response->renderView("perfil", "default", compact(
-            "errors", "user"));
+            "errors", "user","productes"));
 
 
     }
