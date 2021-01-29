@@ -24,10 +24,31 @@ class DefaultController extends Controller
 
 
         try {
+
+            $pdo = App::get("DB");
+            $numberOfRecordsPerPage = 4;
             $categoriaModel = App::getModel(categoriaModel::class);
             $categories = $categoriaModel->findAll();
             $producteModel = App::getModel(producteModel::class);
-            $productes = $producteModel->findAll();
+
+            $consulta = $pdo->query("SELECT COUNT(*) as productes FROM producte");
+            $productes = $consulta->fetch();
+
+            $paginesTotals = $productes["productes"];
+
+            $paginesTotals = $paginesTotals /$numberOfRecordsPerPage;
+
+            //var_dump($paginesTotals);
+
+
+            $currentPage = filter_input(INPUT_GET, "page", FILTER_VALIDATE_INT);
+            if (empty($currentPage))
+                $currentPage = 1;
+
+            $limit = $numberOfRecordsPerPage;
+
+            $productes = $producteModel->findAllPaginated($currentPage, $limit);
+
 
 
         } catch (PDOException $PDOException) {
@@ -41,63 +62,17 @@ class DefaultController extends Controller
 
         $router = App::get(Router::class);
 
-        return $this->response->renderView("index", "default", compact('title', 'productes', 'router','categories'));
+        return $this->response->renderView("index", "default", compact('title', 'productes', 'router','categories','paginesTotals'));
     }
 
-/*    public function contact()
-    {
-
-// 2. S'ha enviat el formulari
-        $errors = [];
-        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-            // 3. Validar
-            if (empty($_POST['nom'])) {
-                $errors[] = "No has posat el nom i cognom";
-            } else {
-                $nom = trim($_POST['nom']);
-                $nom = htmlspecialchars($nom);
-            }
-
-            if (empty($_POST['data'])) {
-                $errors[] = "No has posat la data";
-            } else {
-                $data = trim($_POST['data']);
-                $data = htmlspecialchars($data);
-            }
-
-            if (empty($_POST['email'])) {
-                $errors[] = "No has posat el correu";
-            } else {
-                $email = trim($_POST['email']);
-                $email = htmlspecialchars($email);
-            }
-
-            if (empty($_POST['assumpte'])) {
-                $errors[] = "No has posat l'assumpte";
-            } else {
-                $assumpte = trim($_POST['assumpte']);
-                $assumpte = htmlspecialchars($assumpte);
-            }
-
-            if (empty($_POST['missatge'])) {
-                $errors[] = "No has posat el missatge";
-            } else {
-                $missatge = trim($_POST['missatge']);
-                $missatge = htmlspecialchars($missatge);
-            }
-
-        }
-        require 'views/contact.view.php';
-    }*/
-
-    public function demo(): string
+/*    public function demo(): string
     {
 
         $producteModel = App::getModel(producteModel::class);
         $productes = $producteModel->findAllPaginated(1, 8);
         return $this->response->jsonResponse($productes);
 
-    }
+    }*/
 
     public function filter(): string
     {

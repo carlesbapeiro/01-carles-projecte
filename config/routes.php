@@ -1,7 +1,7 @@
 <?php
 
 /* Default routes */
-$router->get("", "DefaultController", "index");
+$router->get("", "DefaultController", "index",[],"index");
 $router->post("", "DefaultController", "filter", [],"default_filter");
 /*$router->get("contact", "DefaultController", "contact");*/
 $router->get("api/demo", "DefaultController", "demo");

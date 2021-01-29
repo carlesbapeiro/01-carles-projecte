@@ -21,13 +21,10 @@
   <component name="ChangeListManager">
     <list default="true" id="e2882fb9-50f7-419a-8a93-29abca5336c9" name="Default Changelist" comment="Paginacio inacabada">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controllers/ProducteController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/ProducteController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controllers/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/UserController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/perfil.view.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/perfil.view.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/single-page.view.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/single-page.view.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/users-delete.view.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/users-delete.view.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/users-destroy.view.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/users-destroy.view.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/users.view.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/users.view.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/routes.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/routes.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/01-carles.sql" beforeDir="false" afterPath="$PROJECT_DIR$/data/01-carles.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controllers/DefaultController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/DefaultController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/index.view.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/index.view.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -69,7 +66,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../projecte/01-carles" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/data" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="php.override.implement.member.chooser.php.doc" value="NONE" />
     <property name="settings.editor.selected.configurable" value="reference.webide.settings.project.settings.php.debug" />
@@ -77,11 +74,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/data" />
       <recent name="$PROJECT_DIR$/views/categories" />
       <recent name="E:\Usuario\projectePHP\public\images\fotos" />
       <recent name="E:\Usuario\projectePHP\src\Model" />
       <recent name="E:\Usuario\projectePHP\src\Entity" />
-      <recent name="E:\Usuario\projectePHP\views" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />

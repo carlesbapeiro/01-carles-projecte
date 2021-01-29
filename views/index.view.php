@@ -108,6 +108,41 @@
 
     </div>
 </div>
+<div class="container">
+
+    <div class="row my-3">
+        <div class="col6"></div>
+        <div class="col-3">
+        <nav aria-label="form-group">
+            <ul class="pagination">
+                <li class="page-item">
+                    <a class="page-link" href="#" aria-label="Previous">
+                        <span aria-hidden="true">&laquo;</span>
+                        <span class="sr-only">Previ</span>
+                    </a>
+                </li>
+
+                <?php
+
+                for ($i = 1; $i< $paginesTotals; $i++ ){
+
+                    ?>
+                    <li class="page-item"><a class="page-link" <a href="<?=$router->getUrl("index", ["page"=>$i]) ?>"><?=$i ?></a></li>
+
+                <?php
+                } ?>
+                <li class="page-item">
+                    <a class="page-link" href="#" aria-label="Next">
+                        <span aria-hidden="true">&raquo;</span>
+                        <span class="sr-only">Seguent</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+        </div>
+        <div class="col6"></div>
+    </div>
+</div>
 
 
 
@@ -131,6 +166,8 @@
     </div>
 </div>
 
+
+
 <div class="container">
     <div class="row">
         <div class="col-12 registrar-container">
@@ -140,3 +177,4 @@
         </div>
     </div>
 </div>
+

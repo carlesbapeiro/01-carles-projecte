@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.2
+-- version 5.0.4
 -- https://www.phpmyadmin.net/
 --
--- Servidor: localhost
--- Temps de generació: 28-01-2021 a les 13:35:07
--- Versió del servidor: 10.4.14-MariaDB
--- Versió de PHP: 7.4.9
+-- Servidor: 127.0.0.1
+-- Tiempo de generación: 28-01-2021 a las 20:46:12
+-- Versión del servidor: 10.4.17-MariaDB
+-- Versión de PHP: 8.0.1
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,13 +18,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de dades: `01-carles`
+-- Base de datos: `01-carles`
 --
 
 -- --------------------------------------------------------
 
 --
--- Estructura de la taula `categoria`
+-- Estructura de tabla para la tabla `categoria`
 --
 
 CREATE TABLE `categoria` (
@@ -33,7 +33,7 @@ CREATE TABLE `categoria` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Bolcament de dades per a la taula `categoria`
+-- Volcado de datos para la tabla `categoria`
 --
 
 INSERT INTO `categoria` (`id`, `nom`) VALUES
@@ -47,7 +47,7 @@ INSERT INTO `categoria` (`id`, `nom`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estructura de la taula `producte`
+-- Estructura de tabla para la tabla `producte`
 --
 
 CREATE TABLE `producte` (
@@ -62,18 +62,24 @@ CREATE TABLE `producte` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Bolcament de dades per a la taula `producte`
+-- Volcado de datos para la tabla `producte`
 --
 
 INSERT INTO `producte` (`id`, `descripcio`, `preu`, `nom`, `valoracio`, `poster`, `usuari_id`, `categoria_id`) VALUES
 (1, 'soc un desastre', 21, 'yo', 0, '1.jpg', 1, 1),
 (2, 'asdf', 2, 'hola2', 0, '1.jpg', 1, 2),
-(6, 'ASDF', 12, 'carles', 0, 'ud4act3.jpg', 2, 4);
+(6, 'ASDF', 12, 'carles', 0, 'ud4act3.jpg', 2, 4),
+(7, 'aaaaaaa', 123, 'aaaaaa', 0, 'MOV6012e25ac1e92.jpg', 2, 4),
+(8, 'aaaaa', 123, 'aaaaa', 0, 'MOV6012e26432c0f.jpg', 2, 2),
+(9, 'qwerqwerqwer', 123, 'qwerqwerqw', 0, 'MOV6012e272c9796.jpg', 2, 1),
+(10, 'asdfasdfasfd', 123, 'asdfasdf', 0, 'MOV6012e27fb6860.jpg', 2, 3),
+(11, 'asdfasdf', 123, 'carles', 0, 'MOV6012e2907cd7c.jpg', 2, 4),
+(12, 'dfdfdfdfdf', 12, 'sdfdfdfdfd', 0, 'MOV6012e29cadf84.jpg', 2, 3);
 
 -- --------------------------------------------------------
 
 --
--- Estructura de la taula `user`
+-- Estructura de tabla para la tabla `user`
 --
 
 CREATE TABLE `user` (
@@ -86,7 +92,7 @@ CREATE TABLE `user` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 --
--- Bolcament de dades per a la taula `user`
+-- Volcado de datos para la tabla `user`
 --
 
 INSERT INTO `user` (`id`, `username`, `password`, `role`, `mail`, `foto`) VALUES
@@ -95,49 +101,49 @@ INSERT INTO `user` (`id`, `username`, `password`, `role`, `mail`, `foto`) VALUES
 (7, 'superadmin', '$2y$12$WwhOX429S95Q/S/XePvgZeZA5aSUSH3nj6r6dHIfaEFnXeaiYtc/6', 'ROLE_SUPERADMIN', 'superadmin@gmail.com', 'PTN6010627d145b2.jpg');
 
 --
--- Índexs per a les taules bolcades
+-- Índices para tablas volcadas
 --
 
 --
--- Índexs per a la taula `categoria`
+-- Indices de la tabla `categoria`
 --
 ALTER TABLE `categoria`
   ADD PRIMARY KEY (`id`);
 
 --
--- Índexs per a la taula `producte`
+-- Indices de la tabla `producte`
 --
 ALTER TABLE `producte`
   ADD PRIMARY KEY (`id`);
 
 --
--- Índexs per a la taula `user`
+-- Indices de la tabla `user`
 --
 ALTER TABLE `user`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `UNIQUE_USERNAME` (`username`);
 
 --
--- AUTO_INCREMENT per les taules bolcades
+-- AUTO_INCREMENT de las tablas volcadas
 --
 
 --
--- AUTO_INCREMENT per la taula `categoria`
+-- AUTO_INCREMENT de la tabla `categoria`
 --
 ALTER TABLE `categoria`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
--- AUTO_INCREMENT per la taula `producte`
+-- AUTO_INCREMENT de la tabla `producte`
 --
 ALTER TABLE `producte`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
--- AUTO_INCREMENT per la taula `user`
+-- AUTO_INCREMENT de la tabla `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
