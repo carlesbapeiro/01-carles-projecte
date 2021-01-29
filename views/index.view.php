@@ -94,7 +94,7 @@
                         //TODO:MOSTRAR EL NOM DEL VENEDOR NO NOMES EL ID
                         ?>
 
-                        <p class="">Venedor: <?= $producte->getUsuariId() ?> <em>. Preu: <?= $producte->getPreu() ?></em></p>
+                        <p class=""><em>Preu: <?= $producte->getPreu() ?></em></p>
 
 
 
