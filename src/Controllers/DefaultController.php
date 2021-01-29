@@ -15,6 +15,7 @@ use Exception;
 use PDOException;
 use App\Entity\Movie;
 
+
 //TODO: FER QUE LES IMATGES QUE PUTJE EN CASA ES VEGUEN EN CLASSE, PREGUNTAR JORDA
 
 class DefaultController extends Controller
@@ -26,20 +27,19 @@ class DefaultController extends Controller
         try {
 
             $pdo = App::get("DB");
+
             $numberOfRecordsPerPage = 4;
             $categoriaModel = App::getModel(categoriaModel::class);
             $categories = $categoriaModel->findAll();
             $producteModel = App::getModel(producteModel::class);
 
             $consulta = $pdo->query("SELECT COUNT(*) as productes FROM producte");
+
             $productes = $consulta->fetch();
 
             $paginesTotals = $productes["productes"];
 
-            $paginesTotals = $paginesTotals /$numberOfRecordsPerPage;
-
-            //var_dump($paginesTotals);
-
+            $paginesTotals = ceil($paginesTotals /$numberOfRecordsPerPage);
 
             $currentPage = filter_input(INPUT_GET, "page", FILTER_VALIDATE_INT);
             if (empty($currentPage))

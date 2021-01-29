@@ -124,7 +124,7 @@
 
                 <?php
 
-                for ($i = 1; $i< $paginesTotals; $i++ ){
+                for ($i = 1; $i<= $paginesTotals; $i++ ){
 
                     ?>
                     <li class="page-item"><a class="page-link" <a href="<?=$router->getUrl("index", ["page"=>$i]) ?>"><?=$i ?></a></li>

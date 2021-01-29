@@ -1,0 +1,86 @@
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<project version=\"4\">\n  <component name=\"BranchesTreeState\">\n    <expand>\n      <path>\n        <item name=\"ROOT\" type=\"e8cecc67:BranchNodeDescriptor\" />\n        <item name=\"LOCAL_ROOT\" type=\"e8cecc67:BranchNodeDescriptor\" />\n      </path>\n      <path>\n        <item name=\"ROOT\" type=\"e8cecc67:BranchNodeDescriptor\" />\n        <item name=\"REMOTE_ROOT\" type=\"e8cecc67:BranchNodeDescriptor\" />\n      </path>\n      <path>\n        <item name=\"ROOT\" type=\"e8cecc67:BranchNodeDescriptor\" />\n        <item name=\"REMOTE_ROOT\" type=\"e8cecc67:BranchNodeDescriptor\" />\n        <item name=\"GROUP_NODE:origin\" type=\"e8cecc67:BranchNodeDescriptor\" />\n      </path>\n    </expand>\n    <select />\n  </component>\n  <component name=\"ChangeListManager\">\n    <list default=\"true\" id=\"e2882fb9-50f7-419a-8a93-29abca5336c9\" name=\"Default Changelist\" comment=\"SuperAdmins, filtres i solventant errors variats\">\n      <change afterPath=\"$PROJECT_DIR$/views/cistella.view.php\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/config/routes.php\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/config/routes.php\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/public/css/estilsGenerals.css\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/public/css/estilsGenerals.css\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/src/Controllers/AuthController.php\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/Controllers/AuthController.php\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/src/Controllers/ProducteController.php\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/Controllers/ProducteController.php\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/views/_partials/header.partial.php\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/views/_partials/header.partial.php\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/views/auth/login.view.php\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/views/auth/login.view.php\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/views/index.view.php\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/views/index.view.php\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/views/single-page.view.php\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/views/single-page.view.php\" afterDir=\"false\" />\n    </list>\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\n  </component>\n  <component name=\"ComposerSettings\" doNotAsk=\"true\">\n    <pharConfigPath>$PROJECT_DIR$/src/Core/composer.json</pharConfigPath>\n    <execution />\n  </component>\n  <component name=\"FileTemplateManagerImpl\">\n    <option name=\"RECENT_TEMPLATES\">\n      <list>\n        <option value=\"composer.json\" />\n      </list>\n    </option>\n  </component>\n  <component name=\"Git.Settings\">\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\n  </component>\n  <component name=\"PhpServers\">\n    <servers>\n      <server host=\"localhost\" id=\"48dd8183-5617-47bb-8be3-18d611671a21\" name=\"localdebug\" />\n      <server host=\"01-carles-projecte.local\" id=\"fa03bc17-7059-47ae-85cd-f3e11745bb03\" name=\"01-carles-projecte.local\" />\n    </servers>\n  </component>\n  <component name=\"PhpWorkspaceProjectConfiguration\" interpreter_name=\"PHP XAMP\">\n    <include_path>\n      <path value=\"$PROJECT_DIR$/vendor/composer\" />\n    </include_path>\n  </component>\n  <component name=\"ProjectId\" id=\"1nO7KiU5mbfRdqO762z5XZwLmBt\" />\n  <component name=\"ProjectLevelVcsManager\" settingsEditedManually=\"true\" />\n  <component name=\"ProjectViewState\">\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\n    <option name=\"showLibraryContents\" value=\"true\" />\n  </component>\n  <component name=\"PropertiesComponent\">\n    <property name=\"RunOnceActivity.OpenProjectViewOnStart\" value=\"true\" />\n    <property name=\"RunOnceActivity.ShowReadmeOnStart\" value=\"true\" />\n    <property name=\"WebServerToolWindowFactoryState\" value=\"false\" />\n    <property name=\"last_opened_file_path\" value=\"$PROJECT_DIR$/../projecte/01-carles\" />\n    <property name=\"nodejs_package_manager_path\" value=\"npm\" />\n    <property name=\"php.override.implement.member.chooser.php.doc\" value=\"NONE\" />\n    <property name=\"settings.editor.selected.configurable\" value=\"reference.webide.settings.project.settings.php.debug\" />\n    <property name=\"vue.rearranger.settings.migration\" value=\"true\" />\n  </component>\n  <component name=\"RecentsManager\">\n    <key name=\"CopyFile.RECENT_KEYS\">\n      <recent name=\"$PROJECT_DIR$/views/categories\" />\n      <recent name=\"E:\\Usuario\\projectePHP\\public\\images\\fotos\" />\n      <recent name=\"E:\\Usuario\\projectePHP\\src\\Model\" />\n      <recent name=\"E:\\Usuario\\projectePHP\\src\\Entity\" />\n      <recent name=\"E:\\Usuario\\projectePHP\\views\" />\n    </key>\n  </component>\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\n  <component name=\"TaskManager\">\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\n      <changelist id=\"e2882fb9-50f7-419a-8a93-29abca5336c9\" name=\"Default Changelist\" comment=\"\" />\n      <created>1611249220222</created>\n      <option name=\"number\" value=\"Default\" />\n      <option name=\"presentableId\" value=\"Default\" />\n      <updated>1611249220222</updated>\n      <workItem from=\"1611249221261\" duration=\"1132000\" />\n      <workItem from=\"1611250370787\" duration=\"3625000\" />\n      <workItem from=\"1611303326679\" duration=\"3900000\" />\n      <workItem from=\"1611313250498\" duration=\"1524000\" />\n      <workItem from=\"1611315143350\" duration=\"2781000\" />\n      <workItem from=\"1611318754931\" duration=\"1045000\" />\n      <workItem from=\"1611416974667\" duration=\"3635000\" />\n      <workItem from=\"1611420756999\" duration=\"640000\" />\n      <workItem from=\"1611503254196\" duration=\"4638000\" />\n      <workItem from=\"1611570171552\" duration=\"8963000\" />\n      <workItem from=\"1611678013220\" duration=\"8953000\" />\n    </task>\n    <task id=\"LOCAL-00001\" summary=\"nuevas\">\n      <created>1611318771238</created>\n      <option name=\"number\" value=\"00001\" />\n      <option name=\"presentableId\" value=\"LOCAL-00001\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1611318771238</updated>\n    </task>\n    <task id=\"LOCAL-00002\" summary=\"nuevas cosas\">\n      <created>1611319540476</created>\n      <option name=\"number\" value=\"00002\" />\n      <option name=\"presentableId\" value=\"LOCAL-00002\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1611319540476</updated>\n    </task>\n    <task id=\"LOCAL-00003\" summary=\"Usuaris, modificar i borrar productes\">\n      <created>1611507612945</created>\n      <option name=\"number\" value=\"00003\" />\n      <option name=\"presentableId\" value=\"LOCAL-00003\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1611507612945</updated>\n    </task>\n    <task id=\"LOCAL-00004\" summary=\"Implementacio del mail els usuaris, barra de administrador, quan borres usuaris, borres tambe els seus productes associats. Implementacio del nom dels anunciants als productes\">\n      <created>1611601522688</created>\n      <option name=\"number\" value=\"00004\" />\n      <option name=\"presentableId\" value=\"LOCAL-00004\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1611601522688</updated>\n    </task>\n    <task id=\"LOCAL-00005\" summary=\"Retocs en index\">\n      <created>1611602487235</created>\n      <option name=\"number\" value=\"00005\" />\n      <option name=\"presentableId\" value=\"LOCAL-00005\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1611602487235</updated>\n    </task>\n    <task id=\"LOCAL-00006\" summary=\"Retocs en index\">\n      <created>1611602885413</created>\n      <option name=\"number\" value=\"00006\" />\n      <option name=\"presentableId\" value=\"LOCAL-00006\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1611602885413</updated>\n    </task>\n    <task id=\"LOCAL-00007\" summary=\"Categories en proces\">\n      <created>1611740748393</created>\n      <option name=\"number\" value=\"00007\" />\n      <option name=\"presentableId\" value=\"LOCAL-00007\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1611740748394</updated>\n    </task>\n    <task id=\"LOCAL-00008\" summary=\"SuperAdmins, filtres i solventant errors variats\">\n      <created>1611779312474</created>\n      <option name=\"number\" value=\"00008\" />\n      <option name=\"presentableId\" value=\"LOCAL-00008\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1611779312474</updated>\n    </task>\n    <option name=\"localTasksCounter\" value=\"9\" />\n    <servers />\n  </component>\n  <component name=\"TypeScriptGeneratedFilesManager\">\n    <option name=\"version\" value=\"3\" />\n  </component>\n  <component name=\"Vcs.Log.Tabs.Properties\">\n    <option name=\"TAB_STATES\">\n      <map>\n        <entry key=\"MAIN\">\n          <value>\n            <State />\n          </value>\n        </entry>\n      </map>\n    </option>\n    <option name=\"oldMeFiltersMigrated\" value=\"true\" />\n  </component>\n  <component name=\"VcsManagerConfiguration\">\n    <MESSAGE value=\"nuevas\" />\n    <MESSAGE value=\"nuevas cosas\" />\n    <MESSAGE value=\"Usuaris, modificar i borrar productes\" />\n    <MESSAGE value=\"Implementacio del mail els usuaris, barra de administrador, quan borres usuaris, borres tambe els seus productes associats. Implementacio del nom dels anunciants als productes\" />\n    <MESSAGE value=\"Retocs en index\" />\n    <MESSAGE value=\"Categories en proces\" />\n    <MESSAGE value=\"SuperAdmins, filtres i solventant errors variats\" />\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"SuperAdmins, filtres i solventant errors variats\" />\n  </component>\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision 6a4e58a078ef028a8d4f42382f94db03ff658e6e)
++++ b/.idea/workspace.xml	(date 1611837402563)
+@@ -19,18 +19,7 @@
+     <select />
+   </component>
+   <component name="ChangeListManager">
+-    <list default="true" id="e2882fb9-50f7-419a-8a93-29abca5336c9" name="Default Changelist" comment="SuperAdmins, filtres i solventant errors variats">
+-      <change afterPath="$PROJECT_DIR$/views/cistella.view.php" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/config/routes.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/routes.php" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/public/css/estilsGenerals.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/estilsGenerals.css" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/Controllers/AuthController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/AuthController.php" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/Controllers/ProducteController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/ProducteController.php" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/views/_partials/header.partial.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/_partials/header.partial.php" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/views/auth/login.view.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/auth/login.view.php" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/views/index.view.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/index.view.php" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/views/single-page.view.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/single-page.view.php" afterDir="false" />
+-    </list>
++    <list default="true" id="e2882fb9-50f7-419a-8a93-29abca5336c9" name="Default Changelist" comment="bd" />
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+@@ -71,7 +60,7 @@
+     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+     <property name="WebServerToolWindowFactoryState" value="false" />
+-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../projecte/01-carles" />
++    <property name="last_opened_file_path" value="$PROJECT_DIR$/data" />
+     <property name="nodejs_package_manager_path" value="npm" />
+     <property name="php.override.implement.member.chooser.php.doc" value="NONE" />
+     <property name="settings.editor.selected.configurable" value="reference.webide.settings.project.settings.php.debug" />
+@@ -79,11 +68,11 @@
+   </component>
+   <component name="RecentsManager">
+     <key name="CopyFile.RECENT_KEYS">
++      <recent name="$PROJECT_DIR$/data" />
+       <recent name="$PROJECT_DIR$/views/categories" />
+       <recent name="E:\Usuario\projectePHP\public\images\fotos" />
+       <recent name="E:\Usuario\projectePHP\src\Model" />
+       <recent name="E:\Usuario\projectePHP\src\Entity" />
+-      <recent name="E:\Usuario\projectePHP\views" />
+     </key>
+   </component>
+   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+@@ -162,7 +151,21 @@
+       <option name="project" value="LOCAL" />
+       <updated>1611779312474</updated>
+     </task>
+-    <option name="localTasksCounter" value="9" />
++    <task id="LOCAL-00009" summary="Cesta de la compra">
++      <created>1611837260795</created>
++      <option name="number" value="00009" />
++      <option name="presentableId" value="LOCAL-00009" />
++      <option name="project" value="LOCAL" />
++      <updated>1611837260795</updated>
++    </task>
++    <task id="LOCAL-00010" summary="bd">
++      <created>1611837377354</created>
++      <option name="number" value="00010" />
++      <option name="presentableId" value="LOCAL-00010" />
++      <option name="project" value="LOCAL" />
++      <updated>1611837377354</updated>
++    </task>
++    <option name="localTasksCounter" value="11" />
+     <servers />
+   </component>
+   <component name="TypeScriptGeneratedFilesManager">
+@@ -188,6 +191,8 @@
+     <MESSAGE value="Retocs en index" />
+     <MESSAGE value="Categories en proces" />
+     <MESSAGE value="SuperAdmins, filtres i solventant errors variats" />
+-    <option name="LAST_COMMIT_MESSAGE" value="SuperAdmins, filtres i solventant errors variats" />
++    <MESSAGE value="Cesta de la compra" />
++    <MESSAGE value="bd" />
++    <option name="LAST_COMMIT_MESSAGE" value="bd" />
+   </component>
+ </project>
+\ No newline at end of file
