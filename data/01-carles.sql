@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.2
+-- version 5.0.4
 -- https://www.phpmyadmin.net/
 --
--- Servidor: localhost
--- Temps de generació: 01-02-2021 a les 13:53:32
--- Versió del servidor: 10.4.14-MariaDB
--- Versió de PHP: 7.4.9
+-- Servidor: 127.0.0.1
+-- Tiempo de generación: 01-02-2021 a las 19:55:34
+-- Versión del servidor: 10.4.17-MariaDB
+-- Versión de PHP: 8.0.1
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,13 +18,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de dades: `01-carles`
+-- Base de datos: `01-carles`
 --
 
 -- --------------------------------------------------------
 
 --
--- Estructura de la taula `categoria`
+-- Estructura de tabla para la tabla `categoria`
 --
 
 CREATE TABLE `categoria` (
@@ -33,19 +33,24 @@ CREATE TABLE `categoria` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Bolcament de dades per a la taula `categoria`
+-- Volcado de datos para la tabla `categoria`
 --
 
 INSERT INTO `categoria` (`id`, `nom`) VALUES
 (1, 'Tractors'),
 (2, 'Quimics'),
-(3, 'Maquinaria lleguera'),
-(4, 'Fems');
+(3, 'Maquinaria lleugera'),
+(4, 'Fems'),
+(7, 'Reg'),
+(8, 'Llavors'),
+(9, 'Utils'),
+(10, 'Hogar'),
+(11, 'Altres');
 
 -- --------------------------------------------------------
 
 --
--- Estructura de la taula `producte`
+-- Estructura de tabla para la tabla `producte`
 --
 
 CREATE TABLE `producte` (
@@ -60,22 +65,23 @@ CREATE TABLE `producte` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Bolcament de dades per a la taula `producte`
+-- Volcado de datos para la tabla `producte`
 --
 
 INSERT INTO `producte` (`id`, `descripcio`, `preu`, `nom`, `valoracio`, `poster`, `usuari_id`, `categoria_id`) VALUES
-(1, 'soc un desastre', 21, 'yo', 0, '1.jpg', 1, 1),
-(2, 'asdf', 2, 'hola2', 0, '1.jpg', 1, 2),
-(6, 'ASDF', 12, 'carles', 0, 'ud4act3.jpg', 2, 4),
-(14, 'asdfasd', 123, 'David carl', 0, 'MOV6014006ad3498.jpg', 7, 3),
-(15, 'asdf', 12, 'prueba', 0, 'MOV6014008bb0562.jpg', 7, 4),
-(16, 'asdfasd', 123, 'prueba2', 0, 'MOV601400c6093fa.jpg', 7, 4),
-(17, 'Jorda', 123, 'vicent', 0, 'MOV601402b9ddff8.jpg', 7, 3);
+(20, 'Una bolsa de fem', 5, 'Fem', 0, 'MOV60184b83d702d.jpg', 1, 4),
+(21, 'Funciona perfectament pero perd oli', 999, 'Tractor de segona ma', 0, 'MOV60184be637320.jpeg', 1, 1),
+(22, 'Venc pot d\'herbicida molt barat!', 250, 'herbicida', 0, 'MOV60184c27abb3e.jpg', 1, 2),
+(23, 'Esta nova', 25, 'Maquina Herbicida', 0, 'MOV60184c63b646f.jpg', 1, 3),
+(24, 'Ruixa que dona gust', 10, 'Ruixadora', 0, 'MOV60184d22f19a1.jpg', 7, 10),
+(25, 'No l\'he gastada 30 metros', 30, 'Goma Goteo', 0, 'MOV60184d7906138.jpg', 7, 7),
+(26, 'Es venen en pack de 50', 250, 'Llavors Targongers', 0, 'MOV60184da6a3285.jpg', 7, 8),
+(27, 'Va molt rapid i s\'oblida de mirar el codi. Es un poc despistat', 404, 'Rotovator', 0, 'MOV60184e02ad210.jpg', 7, 11);
 
 -- --------------------------------------------------------
 
 --
--- Estructura de la taula `user`
+-- Estructura de tabla para la tabla `user`
 --
 
 CREATE TABLE `user` (
@@ -88,56 +94,55 @@ CREATE TABLE `user` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 --
--- Bolcament de dades per a la taula `user`
+-- Volcado de datos para la tabla `user`
 --
 
 INSERT INTO `user` (`id`, `username`, `password`, `role`, `mail`, `foto`) VALUES
 (1, 'user', '$2y$12$WwuLC3wp64RDz0He8f8LqeYd1cw8zBfYrpz2TTG.bc/PIpJ7y543q', 'ROLE_USER', 'carles@gmail.com', '1.jpg'),
 (2, 'admin', '$2y$12$cfWCU2JgmOfI42/UukroA.Sm0fODRWlqfpfoVTUXVZaLDHQvAF7iS', 'ROLE_ADMIN', 'admin@gmail.com', '1.jpg'),
-(7, 'superadmin', '$2y$12$WwhOX429S95Q/S/XePvgZeZA5aSUSH3nj6r6dHIfaEFnXeaiYtc/6', 'ROLE_SUPERADMIN', 'superadmin@gmail.com', 'PTN6014047bc47e7.jpeg'),
-(10, 'tonto', '$2y$10$pmWCbGFqn/II6FuPrT8PJer7VJlge89NfgWa/VBCMSid1j1E2XJKu', 'ROLE_USER', 'dote@gmail.com', 'MOV6017f3ba2593a.jpg');
+(7, 'superadmin', '$2y$12$WwhOX429S95Q/S/XePvgZeZA5aSUSH3nj6r6dHIfaEFnXeaiYtc/6', 'ROLE_SUPERADMIN', 'superadmin@gmail.com', 'PTN6014047bc47e7.jpeg');
 
 --
--- Índexs per a les taules bolcades
+-- Índices para tablas volcadas
 --
 
 --
--- Índexs per a la taula `categoria`
+-- Indices de la tabla `categoria`
 --
 ALTER TABLE `categoria`
   ADD PRIMARY KEY (`id`);
 
 --
--- Índexs per a la taula `producte`
+-- Indices de la tabla `producte`
 --
 ALTER TABLE `producte`
   ADD PRIMARY KEY (`id`);
 
 --
--- Índexs per a la taula `user`
+-- Indices de la tabla `user`
 --
 ALTER TABLE `user`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `UNIQUE_USERNAME` (`username`);
 
 --
--- AUTO_INCREMENT per les taules bolcades
+-- AUTO_INCREMENT de las tablas volcadas
 --
 
 --
--- AUTO_INCREMENT per la taula `categoria`
+-- AUTO_INCREMENT de la tabla `categoria`
 --
 ALTER TABLE `categoria`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
--- AUTO_INCREMENT per la taula `producte`
+-- AUTO_INCREMENT de la tabla `producte`
 --
 ALTER TABLE `producte`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
 
 --
--- AUTO_INCREMENT per la taula `user`
+-- AUTO_INCREMENT de la tabla `user`
 --
 ALTER TABLE `user`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
