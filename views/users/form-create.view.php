@@ -9,7 +9,7 @@
     </div>
     <div class="form-group">
         <label for="password">Password:</label>
-        <input id="password" class="form-control-file" type="text" name="password" required>
+        <input id="password" class="form-control-file" type="password" name="password" required>
     </div>
     <div class="form-group">
         <label for="foto">Foto:</label>

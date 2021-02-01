@@ -33,8 +33,6 @@ class ProducteController extends Controller
 
 
             //Codi per a traure el usuari (part de traure els productes per usuari)
-            //Depenent del rol es mostraran tots o no, el administrador els veura tots
-
 
             //En aquest cas podria optimitzar el codi fent la instancia de user abans i $user->getRole() == "ROLE_ADMIN
             if($_SESSION["role"] == "ROLE_ADMIN" || $_SESSION["role"] == "ROLE_SUPERADMIN"){
@@ -48,9 +46,6 @@ class ProducteController extends Controller
 
                 $productes = $producteModel->findBy(["usuari_id"=>$id]);
             }
-            //var_dump($_SESSION["role"]);
-            //var_dump($_SESSION["loggedUser"]);
-            //var_dump($user->getUsername());
 
         } catch (PDOException $PDOException) {
             echo $PDOException->getMessage();
@@ -216,7 +211,7 @@ class ProducteController extends Controller
 
     public function filter(): string
     {
-        // S'executa amb el POST
+
         $categoriaModel = App::getModel(categoriaModel::class);
         $categories = $categoriaModel->findAll();
         $router = App::get(Router::class);
@@ -226,21 +221,9 @@ class ProducteController extends Controller
         $id = $user->getId();
 
 
-
-        //Codi brosa
-        $userModel = App::getModel(userModel::class);
-        $allUser = $userModel->findAll(["username"=>"ASC"]);
-        //Fi codi brosa
-
-
         $text = filter_input(INPUT_POST, "text", FILTER_SANITIZE_STRING);
 
         $tipo_busqueda = filter_input(INPUT_POST, "optradio", FILTER_SANITIZE_STRING);
-
-
-
-            //$productes = $producteModel->findBy(["usuari_id"=>$_SESSION["loggedUser"]]);
-
 
         if (!empty($text) || $tipo_busqueda == "cat") {
 
@@ -248,9 +231,6 @@ class ProducteController extends Controller
             $pdo = App::get("DB");
             $producteModel = new producteModel($pdo);
 
-
-
-            //TODO: ORDENAR POR FECHA
             //En el cas de que siga administrador ha de ser un query diferent
             if($_SESSION["role"] == "ROLE_ADMIN" || $_SESSION["role"] == "ROLE_SUPERADMIN"){
 
@@ -298,6 +278,7 @@ class ProducteController extends Controller
 
         } else {
 
+
             $pdo = App::get("DB");
             $producteModel = new producteModel($pdo);
 
@@ -312,12 +293,19 @@ class ProducteController extends Controller
                     "id"=>"%$id%"]);
 
 
+
             }
 
 
             $errors[] = "Cal introduir una paraula de búsqueda o marcar la categoria";
 
         }
+
+        if(empty($productes)){
+
+            $errors[] = "No s'ha trobat cap producte";
+        }
+
         return $this->response->renderView("productes", "default", compact('title', 'productes',
             'producteModel', 'errors',"router",'categories'));
     }

@@ -72,31 +72,8 @@
 
                         <hr  style="height:1px;border:none;color:#333;background-color:#333;">
                         <p class="text-muted"><?= $producte->getDescripcio() ?></p>
-                        <?php
-                        //Revisar per gestionar
-
-                        /*foreach ($allUser as $usuaris){
-                            $id = $usuaris ->getId();
-                            $usuari_id = $producte->getUsuariId();
-                            if($usuari_id == $id) {
-
-                                $nom = $usuaris->getUsername();
-
-                                //break per a ixir del bucle
-                                break;
-                            }else{
-
-                                $nom = "undefined";
-                            }
-
-
-                        }*/
-                        //TODO:MOSTRAR EL NOM DEL VENEDOR NO NOMES EL ID
-                        ?>
 
                         <p class=""><em>Preu: <?= $producte->getPreu() ?></em></p>
-
-
 
                     </div>
                     <a href="/productes/<?=$producte->getId() ?>/show" class="btn btn-info mx-1 my-1">Veure mes informacio</a>
@@ -144,8 +121,6 @@
     </div>
 </div>
 
-
-
 <div class="container">
     <div class="row">
 
@@ -167,14 +142,41 @@
 </div>
 
 
+<?php
 
-<div class="container">
-    <div class="row">
-        <div class="col-12 registrar-container">
-            <a class="registrar-enllas" href="/users/create">
-                REGISTRA'T!!
-            </a>
+$loggedUser = $_SESSION["loggedUser"]??[];
+
+if($loggedUser != []){
+
+    ?>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-12 registrar-container">
+                <a class="registrar-enllas" href="/productes">
+                    Puja productes!
+                </a>
+            </div>
         </div>
     </div>
-</div>
+
+
+
+    <?php
+
+}else{
+    ?>
+    <div class="container">
+        <div class="row">
+            <div class="col-12 registrar-container">
+                <a class="registrar-enllas" href="/users/create">
+                    REGISTRA'T!!
+                </a>
+            </div>
+        </div>
+    </div>
+
+
+    <?php
+} ?>
 

@@ -13,6 +13,7 @@ use App\Core\Security;
 use App\Entity\User;
 use App\Exception\UploadedFileException;
 use App\Exception\UploadedFileNoFileException;
+use App\Model\categoriaModel;
 use App\Model\producteModel;
 use App\Model\UserModel;
 use App\Utils\UploadedFile;
@@ -355,7 +356,43 @@ class UserController extends Controller
 
 
     }
+    public function filter(): string
+    {
 
+        $router = App::get(Router::class);
+        $title = "Users - Agrow";
+        $errors = [];
+
+
+        $text = filter_input(INPUT_POST, "text", FILTER_SANITIZE_STRING);
+
+        $tipo_busqueda = filter_input(INPUT_POST, "optradio", FILTER_SANITIZE_STRING);
+        $pdo = App::get("DB");
+        $userModel = new UserModel($pdo);
+        if (!empty($text)) {
+
+                if ($tipo_busqueda == "nom") {
+                    $users = $userModel->executeQuery("SELECT * FROM user WHERE username LIKE :text",
+                        ["text" => "%$text%"]);
+
+                }
+
+        } else {
+
+            $users = $userModel->executeQuery("SELECT * FROM user");
+
+            $errors[] = "Cal introduir un nom";
+
+        }
+
+        if(empty($users)){
+
+            $errors[] = "No s'ha trobat cap usuari";
+        }
+
+        return $this->response->renderView("users", "default", compact('title', 'users',
+            'userModel', 'errors',"router"));
+    }
 
 
 

@@ -3,7 +3,22 @@
         <div class="col-12">
             <form method="post" action="<?php use App\Entity\User;
 
-            $_SERVER["PHP_SELF"] ?>"
+            $_SERVER["PHP_SELF"] ?>" class="form-inline  justify-content-center my-4">
+
+                <div class="form-group">
+                    <input name="text" class="form-control mr-sm-4"
+                           value="<?= ($_POST["text"]) ?? "" ?>"
+                           type="text" placeholder="Search" aria-label="Search">
+                </div>
+                <div class="form-check-inline">
+                    <label class="form-check-label">
+                        <input class="form-check-input" type="radio" name="optradio" id="nom" value="nom" checked>&nbsp;Nom                       &nbsp;
+                    </label>
+                </div>
+
+                <div class="form-group">
+                    <button class="form-control btn btn-secondary my-2 my-sm-0" type="submit" name="botonFiltrar">Search</button>
+                </div>
 
             </form>
 
@@ -11,10 +26,17 @@
                                             title="create a new user"> <i class="fa fa-plus-circle">
                     </i> New User</a>
             </div>
+            <p><?php
+                if(!empty($errors)){
+                    foreach ($errors as $error){
+                        echo $error;
+                    }
+
+                }?>
+            </p>
 
 
         </div>
-        <p><?= $error ?? "" ?></p>
     </div>
     <?php if (empty($users)) : ?>
         <h3>No s'ha trobar cap element</h3>

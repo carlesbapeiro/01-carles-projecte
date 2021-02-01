@@ -61,6 +61,8 @@ $router->get("users/:id/check", "UserController", "check",
 $router->post("users/:id/validate", "UserController", "validate",
     ["id" => "number"], "users_validate");
 
+$router->post("users", "UserController", "filter", [],"users_filter");
+
 /*   Categories   */
 
 
