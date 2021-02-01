@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.4
+-- version 5.0.2
 -- https://www.phpmyadmin.net/
 --
--- Servidor: 127.0.0.1
--- Tiempo de generación: 28-01-2021 a las 20:46:12
--- Versión del servidor: 10.4.17-MariaDB
--- Versión de PHP: 8.0.1
+-- Servidor: localhost
+-- Temps de generació: 01-02-2021 a les 13:53:32
+-- Versió del servidor: 10.4.14-MariaDB
+-- Versió de PHP: 7.4.9
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,13 +18,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de datos: `01-carles`
+-- Base de dades: `01-carles`
 --
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `categoria`
+-- Estructura de la taula `categoria`
 --
 
 CREATE TABLE `categoria` (
@@ -33,21 +33,19 @@ CREATE TABLE `categoria` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Volcado de datos para la tabla `categoria`
+-- Bolcament de dades per a la taula `categoria`
 --
 
 INSERT INTO `categoria` (`id`, `nom`) VALUES
 (1, 'Tractors'),
 (2, 'Quimics'),
 (3, 'Maquinaria lleguera'),
-(4, 'Fems'),
-(5, 'asdf'),
-(6, 'asdf');
+(4, 'Fems');
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `producte`
+-- Estructura de la taula `producte`
 --
 
 CREATE TABLE `producte` (
@@ -62,24 +60,22 @@ CREATE TABLE `producte` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Volcado de datos para la tabla `producte`
+-- Bolcament de dades per a la taula `producte`
 --
 
 INSERT INTO `producte` (`id`, `descripcio`, `preu`, `nom`, `valoracio`, `poster`, `usuari_id`, `categoria_id`) VALUES
 (1, 'soc un desastre', 21, 'yo', 0, '1.jpg', 1, 1),
 (2, 'asdf', 2, 'hola2', 0, '1.jpg', 1, 2),
 (6, 'ASDF', 12, 'carles', 0, 'ud4act3.jpg', 2, 4),
-(7, 'aaaaaaa', 123, 'aaaaaa', 0, 'MOV6012e25ac1e92.jpg', 2, 4),
-(8, 'aaaaa', 123, 'aaaaa', 0, 'MOV6012e26432c0f.jpg', 2, 2),
-(9, 'qwerqwerqwer', 123, 'qwerqwerqw', 0, 'MOV6012e272c9796.jpg', 2, 1),
-(10, 'asdfasdfasfd', 123, 'asdfasdf', 0, 'MOV6012e27fb6860.jpg', 2, 3),
-(11, 'asdfasdf', 123, 'carles', 0, 'MOV6012e2907cd7c.jpg', 2, 4),
-(12, 'dfdfdfdfdf', 12, 'sdfdfdfdfd', 0, 'MOV6012e29cadf84.jpg', 2, 3);
+(14, 'asdfasd', 123, 'David carl', 0, 'MOV6014006ad3498.jpg', 7, 3),
+(15, 'asdf', 12, 'prueba', 0, 'MOV6014008bb0562.jpg', 7, 4),
+(16, 'asdfasd', 123, 'prueba2', 0, 'MOV601400c6093fa.jpg', 7, 4),
+(17, 'Jorda', 123, 'vicent', 0, 'MOV601402b9ddff8.jpg', 7, 3);
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `user`
+-- Estructura de la taula `user`
 --
 
 CREATE TABLE `user` (
@@ -92,58 +88,59 @@ CREATE TABLE `user` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 --
--- Volcado de datos para la tabla `user`
+-- Bolcament de dades per a la taula `user`
 --
 
 INSERT INTO `user` (`id`, `username`, `password`, `role`, `mail`, `foto`) VALUES
 (1, 'user', '$2y$12$WwuLC3wp64RDz0He8f8LqeYd1cw8zBfYrpz2TTG.bc/PIpJ7y543q', 'ROLE_USER', 'carles@gmail.com', '1.jpg'),
 (2, 'admin', '$2y$12$cfWCU2JgmOfI42/UukroA.Sm0fODRWlqfpfoVTUXVZaLDHQvAF7iS', 'ROLE_ADMIN', 'admin@gmail.com', '1.jpg'),
-(7, 'superadmin', '$2y$12$WwhOX429S95Q/S/XePvgZeZA5aSUSH3nj6r6dHIfaEFnXeaiYtc/6', 'ROLE_SUPERADMIN', 'superadmin@gmail.com', 'PTN6010627d145b2.jpg');
+(7, 'superadmin', '$2y$12$WwhOX429S95Q/S/XePvgZeZA5aSUSH3nj6r6dHIfaEFnXeaiYtc/6', 'ROLE_SUPERADMIN', 'superadmin@gmail.com', 'PTN6014047bc47e7.jpeg'),
+(10, 'tonto', '$2y$10$pmWCbGFqn/II6FuPrT8PJer7VJlge89NfgWa/VBCMSid1j1E2XJKu', 'ROLE_USER', 'dote@gmail.com', 'MOV6017f3ba2593a.jpg');
 
 --
--- Índices para tablas volcadas
+-- Índexs per a les taules bolcades
 --
 
 --
--- Indices de la tabla `categoria`
+-- Índexs per a la taula `categoria`
 --
 ALTER TABLE `categoria`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indices de la tabla `producte`
+-- Índexs per a la taula `producte`
 --
 ALTER TABLE `producte`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indices de la tabla `user`
+-- Índexs per a la taula `user`
 --
 ALTER TABLE `user`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `UNIQUE_USERNAME` (`username`);
 
 --
--- AUTO_INCREMENT de las tablas volcadas
+-- AUTO_INCREMENT per les taules bolcades
 --
 
 --
--- AUTO_INCREMENT de la tabla `categoria`
+-- AUTO_INCREMENT per la taula `categoria`
 --
 ALTER TABLE `categoria`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
--- AUTO_INCREMENT de la tabla `producte`
+-- AUTO_INCREMENT per la taula `producte`
 --
 ALTER TABLE `producte`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
--- AUTO_INCREMENT de la tabla `user`
+-- AUTO_INCREMENT per la taula `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
