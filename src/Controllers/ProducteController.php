@@ -35,6 +35,8 @@ class ProducteController extends Controller
             //Codi per a traure el usuari (part de traure els productes per usuari)
             //Depenent del rol es mostraran tots o no, el administrador els veura tots
 
+
+            //En aquest cas podria optimitzar el codi fent la instancia de user abans i $user->getRole() == "ROLE_ADMIN
             if($_SESSION["role"] == "ROLE_ADMIN" || $_SESSION["role"] == "ROLE_SUPERADMIN"){
 
                 $productes = $producteModel->findAll(["nom" => "ASC"]);
