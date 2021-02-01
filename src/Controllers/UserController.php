@@ -78,7 +78,7 @@ class UserController extends Controller
 
         if (empty($errors)) {
             try {
-                $uploadedFile = new UploadedFile("foto", 1024 * 1024, ["image/jpeg", "image/jpg"]);
+                $uploadedFile = new UploadedFile("foto", 1024 * 1024, ["image/jpeg", "image/jpg","image/png"]);
                 if ($uploadedFile->validate()) {
                     $uploadedFile->save(User::FOTO_PATH, uniqid("MOV"));
                     $filename = $uploadedFile->getFileName();

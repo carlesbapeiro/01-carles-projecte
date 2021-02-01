@@ -116,7 +116,7 @@ class ProducteController extends Controller
 
         if (empty($errors)) {
             try {
-                $uploadedFile = new UploadedFile("poster", 2000 * 1024, ["image/jpeg", "image/jpg"]);
+                $uploadedFile = new UploadedFile("poster", 2000 * 1024, ["image/jpeg", "image/jpg","image/png"]);
 
                 if ($uploadedFile->validate()) {
                     $uploadedFile->save(Producte::POSTER_PATH, uniqid("MOV"));
@@ -374,7 +374,7 @@ class ProducteController extends Controller
                 $poster = filter_input(INPUT_POST, "poster");
                 //Gestion de la imagen si se ha subido
                 try {
-                    $image = new UploadedFile('poster', 300000, ['image/jpg', 'image/jpeg']);
+                    $image = new UploadedFile('poster', 2000 * 1024, ['image/jpg', 'image/jpeg',"image/png"]);
                     if ($image->validate()) {
                         $image->save(Producte::POSTER_PATH);
                         $poster = $image->getFileName();

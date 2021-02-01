@@ -20,8 +20,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e2882fb9-50f7-419a-8a93-29abca5336c9" name="Default Changelist" comment="fotos de la bd">
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_22_01_2021_17_24_[Default_Changelist]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_22_01_2021_17_24__Default_Changelist_.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/index.view.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/index.view.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controllers/ProducteController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/ProducteController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controllers/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/UserController.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -97,6 +100,7 @@
       <workItem from="1611503254196" duration="4638000" />
       <workItem from="1611570171552" duration="8963000" />
       <workItem from="1611678013220" duration="8953000" />
+      <workItem from="1612180272416" duration="304000" />
     </task>
     <task id="LOCAL-00001" summary="nuevas">
       <created>1611318771238</created>
@@ -182,7 +186,21 @@
       <option name="project" value="LOCAL" />
       <updated>1611924487858</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="fotos de la bd">
+      <created>1611924727034</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1611924727034</updated>
+    </task>
+    <task id="LOCAL-00014" summary="fotos de la bd">
+      <created>1611924734502</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1611924734502</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
