@@ -17,7 +17,6 @@ $router->post("productes/create", "ProducteController", "store",[],"","ROLE_USER
 
 //Tots els usuaris poden vore la pagina del producte
 
-//TODO:IDEA: MOSTRAR EN LA PAGINA SHOW PRODUCTES QUE TINGUEN LA MATEIXA CATEGORIA BAIX
 
 $router->get("productes/:id/show","ProducteController","show",["id"=>"number"],"");
 

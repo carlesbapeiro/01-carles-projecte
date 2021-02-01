@@ -1,6 +1,5 @@
 <?php
 
-//TODO:Cap la posibilitat de que si poses mal la contrassenya al inici de sessio et done error. Gestionar-ho.
 namespace App\Controllers;
 
 

@@ -16,7 +16,6 @@ use PDOException;
 use App\Entity\Movie;
 
 
-//TODO: FER QUE LES IMATGES QUE PUTJE EN CASA ES VEGUEN EN CLASSE, PREGUNTAR JORDA
 
 class DefaultController extends Controller
 {
