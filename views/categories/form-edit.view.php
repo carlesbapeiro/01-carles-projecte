@@ -2,7 +2,7 @@
     <input type="hidden" name="id" value="<?=$categoria->getId()?>">
     <div class="form-group">
         <label for="nom">Nom:</label>
-        <input id="nom" class="form-control" type="text" name="nom" maxlength="10"
+        <input id="nom" class="form-control" type="text" name="nom" maxlength="20"
                value="<?=$categoria->getNom()?>" required>
     </div>
 

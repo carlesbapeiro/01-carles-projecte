@@ -30,7 +30,13 @@ class UserController extends Controller
         $title = "Users - Movie FX";
         $errors = [];
         $userModel = new UserModel(App::get("DB"));
-        $users = $userModel->findAll();
+        if($_SESSION["role"] == "ROLE_SUPERADMIN"){
+            $users = $userModel->findAll();
+
+        }else{
+            $users = $userModel->findBy(["role"=>"ROLE_USER"]);
+        }
+
 
         $router = App::get(Router::class);
 
@@ -358,6 +364,7 @@ class UserController extends Controller
     public function filter(): string
     {
 
+
         $router = App::get(Router::class);
         $title = "Users - Agrow";
         $errors = [];
@@ -370,17 +377,37 @@ class UserController extends Controller
         $userModel = new UserModel($pdo);
         if (!empty($text)) {
 
+            if($_SESSION["role"] == "ROLE_SUPERADMIN"){
+
                 if ($tipo_busqueda == "nom") {
                     $users = $userModel->executeQuery("SELECT * FROM user WHERE username LIKE :text",
                         ["text" => "%$text%"]);
 
                 }
+            }else{
+
+                if ($tipo_busqueda == "nom") {
+                    $users = $userModel->executeQuery("SELECT * FROM user WHERE username LIKE :text AND role LIKE 'ROLE_USER%' ",
+                        ["text" => "%$text%"]);
+
+                }
+
+            }
 
         } else {
+            if($_SESSION["role"] == "ROLE_SUPERADMIN"){
 
-            $users = $userModel->executeQuery("SELECT * FROM user");
+                $users = $userModel->executeQuery("SELECT * FROM user");
 
-            $errors[] = "Cal introduir un nom";
+                $errors[] = "Cal introduir un nom";
+            }else{
+                $users = $userModel->executeQuery("SELECT * FROM user WHERE role LIKE 'ROLE_USER%'");
+
+                $errors[] = "Cal introduir un nom";
+
+            }
+
+
 
         }
 

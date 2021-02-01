@@ -36,6 +36,7 @@ class DefaultController extends Controller
 
             $productes = $consulta->fetch();
 
+
             $paginesTotals = $productes["productes"];
 
             $paginesTotals = ceil($paginesTotals /$numberOfRecordsPerPage);
@@ -117,6 +118,17 @@ class DefaultController extends Controller
             $errors[] = "Cal introduir una paraula de búsqueda o marcar la categoria";
 
         }
-        return $this->response->renderView("index", "default", compact('title', 'productes', 'errors', "router", 'categories'));
+
+        $numberOfRecordsPerPage = 4;
+        $paginesTotals = count($productes);
+
+        $paginesTotals = ceil($paginesTotals /$numberOfRecordsPerPage);
+
+        $currentPage = filter_input(INPUT_GET, "page", FILTER_VALIDATE_INT);
+        if (empty($currentPage))
+            $currentPage = 1;
+
+
+        return $this->response->renderView("index", "default", compact('title', 'productes', 'errors', "router", 'categories','paginesTotals'));
     }
 }
